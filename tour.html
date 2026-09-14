@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tour - Chan Palace</title>
+    <meta name="description" content="360° Virtual Tour of Chan Palace Historical Center">
+
+    <!-- A-Frame for Web VR -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body style="margin:0; overflow:hidden; background:#000;">
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-text">กำลังโหลดสภาพแวดล้อมเสมือนจริง...</div>
+    </div>
+
+    <!-- A-Frame Scene -->
+    <a-scene
+        embedded
+        renderer="antialias: true; colorManagement: true; highRefreshRate: true"
+        vr-mode-ui="enabled: false"
+        loading-screen="enabled: false">
+
+        <!-- 360 Sky (equirectangular panoramas); plain dark for non-360 stops -->
+        <a-sky
+            id="vr-sky"
+            animation="property: material.opacity; from: 0; to: 1; dur: 1000">
+        </a-sky>
+
+        <!-- Camera with cursor -->
+        <a-entity position="0 1.6 0">
+            <a-camera look-controls="reverseMouseDrag: true" wasd-controls="enabled: false">
+                <!-- Framed photo for stops that only have a regular photo, not a 360
+                     panorama. Parented to the camera so it always stays in view. -->
+                <a-image id="flat-photo" visible="false" position="0 0 -4"
+                         material="shader: flat; side: double"></a-image>
+            </a-camera>
+        </a-entity>
+
+        <!-- Ambient light -->
+        <a-light type="ambient" color="#FFF" intensity="0.6"></a-light>
+        <a-light type="directional" color="#FFF" intensity="0.4" position="-1 2 1"></a-light>
+    </a-scene>
+
+    <!-- UI Overlay -->
+    <div class="tour-ui">
+        <!-- Header -->
+        <div class="tour-header">
+            <a href="evaluation.html" class="tour-back" style="margin-right:15px;"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg><span>ประเมินผล</span></a><div class="tour-title">วิหารหลวงพ่อพระพุทธชินราช</div>
+            <a href="index.html" class="tour-back">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                <span>กลับ</span>
+            </a>
+        </div>
+
+        <!-- Scene Selector (Right Side) — thumbnails rendered dynamically for all 7 locations -->
+        <div class="scene-selector">
+            <!-- Thumbnails rendered by js/tour.js -->
+        </div>
+
+        <!-- Site Info Panel (Left Side) — opening days, sacred-day calendar, route map -->
+        <div class="site-panel" id="sitePanel">
+            <button class="site-panel-toggle" type="button" aria-label="ย่อ/ขยายแผงข้อมูล">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <div class="site-panel-inner">
+                <h3 class="site-panel-title">ข้อมูลสถานที่</h3>
+                <div class="site-acc">
+                    <section class="acc-item open" data-acc="hours">
+                        <button class="acc-head" type="button">
+                            <span class="acc-ico" aria-hidden="true">🕒</span>
+                            <span class="acc-label">เวลาเปิด–ปิด / วันทำการ</span>
+                            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="acc-body" data-body="hours"></div>
+                    </section>
+                    <section class="acc-item" data-acc="events">
+                        <button class="acc-head" type="button">
+                            <span class="acc-ico" aria-hidden="true">📅</span>
+                            <span class="acc-label">วันสำคัญ / งานประจำปี</span>
+                            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="acc-body" data-body="events"></div>
+                    </section>
+                    <section class="acc-item" data-acc="route">
+                        <button class="acc-head" type="button">
+                            <span class="acc-ico" aria-hidden="true">🧭</span>
+                            <span class="acc-label">การเดินทาง</span>
+                            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+                        </button>
+                        <div class="acc-body" data-body="route">
+                            <div class="route-map"></div>
+                            <div class="route-info"></div>
+                        </div>
+                    </section>
+                </div>
+                <p class="site-note"></p>
+            </div>
+        </div>
+
+        <!-- Info Panel (Bottom) -->
+        <div class="info-panel">
+            <div class="info-tabs">
+                <button class="info-tab active" data-layer="overview">ระดับข้อมูลทั่วไป</button>
+                <button class="info-tab" data-layer="deep_dive">ระดับข้อมูลเจาะลึก</button>
+            </div>
+            <div class="info-content">
+                ยินดีต้อนรับสู่วิหารหลวงพ่อพระพุทธชินราช พระพุทธรูปคู่บ้านคู่เมืองพิษณุโลก หล่อขึ้นในสมัยสุโขทัยเมื่อกว่าเจ็ดร้อยปีก่อน ได้รับการยกย่องว่างดงามที่สุดองค์หนึ่งของไทย ด้วยพุทธลักษณะอันอ่อนช้อยประณีต ทุกวันนี้ยังคงเป็นที่เคารพศรัทธาของพุทธศาสนิกชนทั่วประเทศ
+            </div>
+            <div class="info-actions">
+                <button class="btn-speak">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <span>▶ ฟังเสียงบรรยาย</span>
+                </button>
+                <span class="duration-badge">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>55 วินาที</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/tour.js"></script>
+</body>
+</html>

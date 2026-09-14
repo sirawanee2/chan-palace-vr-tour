@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>พระราชวังจันทน์ เสมือนจริง | Chan Palace Virtual Tour</title>
+    <meta name="description" content="ระบบนำชมเสมือนจริงศูนย์ประวัติศาสตร์พระราชวังจันทน์ ด้วยการเล่าเรื่องแบบลำดับชั้น">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <!-- Background Effects -->
+    <canvas id="particles-canvas"></canvas>
+    <div class="bg-gradient"></div>
+    <div class="thai-pattern"></div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="#" class="nav-logo">CHAN PALACE</a>
+        <div class="nav-links"><a href="evaluation.html" class="nav-link">ประเมินผล</a></div><div class="nav-lang">
+            <button class="lang-btn active" data-lang="th">ไทย</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-layer" id="heroBgA"></div>
+        <div class="hero-bg-layer" id="heroBgB"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">VIRTUAL REALITY TOUR</div>
+            <h1 class="hero-title" data-i18n="welcome">ยินดีต้อนรับ Chan Palace in Virtual Tours</h1>
+            <p class="hero-subtitle" data-i18n="hero_description">
+                สัมผัสความยิ่งใหญ่ของศูนย์ประวัติศาสตร์แห่งชาติผ่านประสบการณ์เสมือนจริง 360° พร้อมเสียงบรรยายอัจฉริยะที่เล่าเรื่องตามจังหวะของคุณ
+            </p>
+            <a href="tour.html?id=wat_phra_buddha_chinnarat&lang=th" class="hero-cta">
+                <span data-i18n="start_tour">เริ่มการนำชม</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations-section" id="locations">
+        <div class="section-header">
+            <div class="section-label" data-i18n="section_label">Select Destination</div>
+            <h2 class="section-title" data-i18n="select_location">เลือกสถานที่นำชม</h2>
+            <p class="section-desc" data-i18n="section_description">
+                เลือกสำรวจสถานที่สำคัญภายในศูนย์ประวัติศาสตร์ พบเรื่องราวและความงดงามที่คุณอาจไม่เคยรู้มาก่อน ผ่านมุมมองเสมือนจริงที่ครบทุกองศา
+            </p>
+        </div>
+        <div class="locations-grid">
+            <!-- Cards will be rendered by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-logo">CHAN PALACE</div>
+        <p class="footer-text">
+            ระบบนำชมเสมือนจริงศูนย์ประวัติศาสตร์พระราชวังจันทน์<br>
+            มหาวิทยาลัยราชภัฏพิบูลสงคราม
+        </p>
+        <div class="footer-divider"></div>
+        <p class="footer-copy">© 2026 Chan Palace Historical Center Virtual Tour. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
