@@ -3,24 +3,55 @@
    CHAN PALACE VIRTUAL TOUR - EVALUATION JS
    ============================================ */
 
+// Google Sheet (via Apps Script Web App) that stores every submitted
+// evaluation, so all visitors see the same shared set of reviews instead of
+// each browser only seeing what it submitted itself.
+const SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbyVuEn38cIUhEyrztiSiEcu7fki_ot9n78vMJUg4TwXSB3mjgoGSOciYjjK0LksVOaH/exec';
+
 class EvaluationSystem {
     constructor() {
         this.currentLang = 'th';
         this.content = null;
-        // Storage key intentionally changed from 'chan_palace_evaluations' to discard
-        // any pre-existing simulated/mock respondents cached in visitors' browsers.
-        this.responses = JSON.parse(localStorage.getItem('chan_palace_evaluations_real') || '[]');
+        this.responses = [];
         this.currentTab = 'questionnaire';
         this.init();
     }
 
     async init() {
         await this.loadContent();
+        await this.loadResponses();
         this.setupLanguage();
         this.renderHero();
         this.renderTabs();
         this.renderContent();
         this.setupNavigation();
+    }
+
+    // Fetches every response from the shared Google Sheet. The header row's
+    // column names are trimmed defensively in case the sheet has stray
+    // trailing spaces (e.g. "name " instead of "name").
+    async loadResponses() {
+        try {
+            const res = await fetch(SHEET_API_URL);
+            const rows = await res.json();
+            this.responses = rows.map(row => {
+                const norm = {};
+                Object.keys(row).forEach(key => { norm[key.trim()] = row[key]; });
+                let scores = {};
+                try { scores = JSON.parse(norm.scores || '{}'); } catch (e) { scores = {}; }
+                return {
+                    name: norm.name,
+                    role: norm.role,
+                    timestamp: norm.timestamp,
+                    scores,
+                    feedback: norm.feedback,
+                    source: 'user'
+                };
+            });
+        } catch (error) {
+            console.error('Error loading shared reviews:', error);
+            this.responses = [];
+        }
     }
 
     async loadContent() {
@@ -74,10 +105,6 @@ class EvaluationSystem {
             if (window.scrollY > 50) nav?.classList.add('scrolled');
             else nav?.classList.remove('scrolled');
         });
-    }
-
-    saveData() {
-        localStorage.setItem('chan_palace_evaluations_real', JSON.stringify(this.responses));
     }
 
     renderTabs() {
@@ -196,7 +223,7 @@ class EvaluationSystem {
         });
     }
 
-    handleSubmit(form) {
+    async handleSubmit(form) {
         const formData = new FormData(form);
         const data = this.content.evaluation[this.currentLang];
 
@@ -210,7 +237,6 @@ class EvaluationSystem {
         });
 
         const response = {
-            id: this.responses.length + 1,
             name: formData.get('name') || `ผู้ตอบแบบสอบถาม ${this.responses.length + 1}`,
             role: formData.get('role'),
             feedback: (formData.get('feedback') || '').trim(),
@@ -218,8 +244,25 @@ class EvaluationSystem {
             scores: scores
         };
 
-        this.responses.push(response);
-        this.saveData();
+        const submitBtn = form.querySelector('.submit-btn');
+        if (submitBtn) submitBtn.disabled = true;
+
+        // Show the new response immediately in this browser rather than
+        // re-fetching the sheet right away — Apps Script's Web App redirect
+        // can return an unrelated error page on rapid consecutive calls even
+        // though the row was written fine. Other visitors pick it up the
+        // next time they load the page, via loadResponses() in init().
+        this.responses.push({ ...response, source: 'user' });
+
+        try {
+            await fetch(SHEET_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(response)
+            });
+        } catch (error) {
+            console.error('Error submitting to shared sheet:', error);
+        }
 
         // Show success
         const successMsg = document.createElement('div');
