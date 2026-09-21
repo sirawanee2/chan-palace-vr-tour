@@ -658,6 +658,41 @@ a-scene {
     margin-bottom: 30px;
 }
 
+.footer-qr {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    margin: 0 auto 30px;
+}
+
+.footer-qr img {
+    display: block;
+    border-radius: 8px;
+    background: #fff;
+    padding: 6px;
+}
+
+.footer-qr-caption {
+    text-align: left;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.footer-qr-caption a {
+    color: var(--royal-gold);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.footer-qr-caption a:hover {
+    text-decoration: underline;
+}
+
 .footer-divider {
     width: 100px;
     height: 1px;
@@ -1857,6 +1892,13 @@ a-scene {
     .review-date {
         margin-left: 0;
         width: 100%;
+    }
+    .footer-qr {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-qr-caption {
+        text-align: center;
     }
 }
 
