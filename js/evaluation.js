@@ -8,6 +8,18 @@
 // each browser only seeing what it submitted itself.
 const SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbyVuEn38cIUhEyrztiSiEcu7fki_ot9n78vMJUg4TwXSB3mjgoGSOciYjjK0LksVOaH/exec';
 
+// Rows created while building/testing this Sheets integration — matched by
+// timestamp (exact and unique) rather than name, since one of them has
+// mangled Thai text from an early curl-based test. Hidden client-side so
+// nobody has to hand-edit the sheet to clean them up.
+const TEST_ROW_TIMESTAMPS = new Set([
+    '2026-09-21T16:21:45.366Z',
+    '2026-09-21T16:22:30.164Z',
+    '2026-09-21T16:26:20.812Z',
+    '2026-09-21T16:27:24.425Z',
+    '2026-09-21T16:29:39.510Z'
+]);
+
 class EvaluationSystem {
     constructor() {
         this.currentLang = 'th';
@@ -67,7 +79,8 @@ class EvaluationSystem {
                     // scores means there's nothing meaningful to show.
                     const validDate = r.timestamp && !isNaN(new Date(r.timestamp).getTime());
                     const hasScores = r.scores && Object.values(r.scores).some(arr => Array.isArray(arr) && arr.length > 0);
-                    return validDate && hasScores;
+                    const isTestRow = TEST_ROW_TIMESTAMPS.has(r.timestamp);
+                    return validDate && hasScores && !isTestRow;
                 });
                 return;
             } catch (error) {
