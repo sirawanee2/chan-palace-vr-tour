@@ -19,39 +19,56 @@ class EvaluationSystem {
 
     async init() {
         await this.loadContent();
-        await this.loadResponses();
         this.setupLanguage();
         this.renderHero();
         this.renderTabs();
         this.renderContent();
         this.setupNavigation();
+        // Don't block the page on the Sheets fetch — it can be slow or
+        // blocked entirely (network policy, ad blocker), and the
+        // questionnaire tab doesn't need it. Re-render only if the visitor
+        // is already looking at the results tab once it resolves.
+        this.loadResponses().then(() => {
+            if (this.currentTab === 'results') this.renderContent();
+        });
     }
 
     // Fetches every response from the shared Google Sheet. The header row's
     // column names are trimmed defensively in case the sheet has stray
-    // trailing spaces (e.g. "name " instead of "name").
+    // trailing spaces (e.g. "name " instead of "name"). Aborts after 8s per
+    // attempt so a stuck request never leaves the results tab loading
+    // forever, and retries a couple of times since Apps Script's Web App
+    // redirect intermittently returns an unrelated error page instead of
+    // the actual JSON, even when the underlying data is fine.
     async loadResponses() {
-        try {
-            const res = await fetch(SHEET_API_URL);
-            const rows = await res.json();
-            this.responses = rows.map(row => {
-                const norm = {};
-                Object.keys(row).forEach(key => { norm[key.trim()] = row[key]; });
-                let scores = {};
-                try { scores = JSON.parse(norm.scores || '{}'); } catch (e) { scores = {}; }
-                return {
-                    name: norm.name,
-                    role: norm.role,
-                    timestamp: norm.timestamp,
-                    scores,
-                    feedback: norm.feedback,
-                    source: 'user'
-                };
-            });
-        } catch (error) {
-            console.error('Error loading shared reviews:', error);
-            this.responses = [];
+        for (let attempt = 1; attempt <= 3; attempt++) {
+            try {
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 8000);
+                const res = await fetch(SHEET_API_URL, { signal: controller.signal });
+                clearTimeout(timeout);
+                const rows = await res.json();
+                this.responses = rows.map(row => {
+                    const norm = {};
+                    Object.keys(row).forEach(key => { norm[key.trim()] = row[key]; });
+                    let scores = {};
+                    try { scores = JSON.parse(norm.scores || '{}'); } catch (e) { scores = {}; }
+                    return {
+                        name: norm.name,
+                        role: norm.role,
+                        timestamp: norm.timestamp,
+                        scores,
+                        feedback: norm.feedback,
+                        source: 'user'
+                    };
+                });
+                return;
+            } catch (error) {
+                console.error(`Error loading shared reviews (attempt ${attempt}/3):`, error);
+                if (attempt < 3) await new Promise(r => setTimeout(r, 800));
+            }
         }
+        this.responses = [];
     }
 
     async loadContent() {
