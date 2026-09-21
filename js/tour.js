@@ -241,9 +241,7 @@ class TourController {
             const ratio = probe.naturalWidth / probe.naturalHeight;
             // A real 360 panorama is both wide (≈ 2:1) and large; a small wide
             // thumbnail is not a panorama and would just smear on the sphere.
-            // A regular 16:9 photo (ratio ≈ 1.78) is NOT a panorama either — wrapping
-            // it on the sky sphere tears the image at the seam, so require ≈2:1.
-            const isPano = ratio >= 1.9 && probe.naturalWidth >= 2000;
+            const isPano = ratio >= 1.7 && probe.naturalWidth >= 2000;
 
             if (sky) {
                 sky.setAttribute('material', 'opacity', 1);
