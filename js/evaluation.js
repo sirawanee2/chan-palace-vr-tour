@@ -61,6 +61,13 @@ class EvaluationSystem {
                         feedback: norm.feedback,
                         source: 'user'
                     };
+                }).filter(r => {
+                    // Skip rows a sheet edit left partially blank (e.g. an
+                    // accidental cell delete) — no valid date or no actual
+                    // scores means there's nothing meaningful to show.
+                    const validDate = r.timestamp && !isNaN(new Date(r.timestamp).getTime());
+                    const hasScores = r.scores && Object.values(r.scores).some(arr => Array.isArray(arr) && arr.length > 0);
+                    return validDate && hasScores;
                 });
                 return;
             } catch (error) {
