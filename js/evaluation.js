@@ -47,16 +47,17 @@ class EvaluationSystem {
 
     // Fetches every response from the shared Google Sheet. The header row's
     // column names are trimmed defensively in case the sheet has stray
-    // trailing spaces (e.g. "name " instead of "name"). Aborts after 8s per
-    // attempt so a stuck request never leaves the results tab loading
-    // forever, and retries a couple of times since Apps Script's Web App
-    // redirect intermittently returns an unrelated error page instead of
-    // the actual JSON, even when the underlying data is fine.
+    // trailing spaces (e.g. "name " instead of "name"). Apps Script's Web
+    // App redirect fails outright (an unrelated error page instead of the
+    // actual JSON) roughly half the time in practice, so this retries
+    // aggressively with a short per-attempt timeout, and falls back to the
+    // last successfully fetched copy (cached locally) if every attempt
+    // fails, rather than showing "no reviews" when reviews do exist.
     async loadResponses() {
-        for (let attempt = 1; attempt <= 3; attempt++) {
+        for (let attempt = 1; attempt <= 6; attempt++) {
             try {
                 const controller = new AbortController();
-                const timeout = setTimeout(() => controller.abort(), 8000);
+                const timeout = setTimeout(() => controller.abort(), 5000);
                 const res = await fetch(SHEET_API_URL, { signal: controller.signal });
                 clearTimeout(timeout);
                 const rows = await res.json();
@@ -82,13 +83,20 @@ class EvaluationSystem {
                     const isTestRow = TEST_ROW_TIMESTAMPS.has(r.timestamp);
                     return validDate && hasScores && !isTestRow;
                 });
+                localStorage.setItem('chan_palace_reviews_cache', JSON.stringify(this.responses));
                 return;
             } catch (error) {
-                console.error(`Error loading shared reviews (attempt ${attempt}/3):`, error);
-                if (attempt < 3) await new Promise(r => setTimeout(r, 800));
+                console.error(`Error loading shared reviews (attempt ${attempt}/6):`, error);
+                if (attempt < 6) await new Promise(r => setTimeout(r, 500));
             }
         }
-        this.responses = [];
+        // Every attempt failed — show the last successful fetch (from this
+        // browser's last visit) instead of an empty "no reviews" state.
+        try {
+            this.responses = JSON.parse(localStorage.getItem('chan_palace_reviews_cache') || '[]');
+        } catch (e) {
+            this.responses = [];
+        }
     }
 
     async loadContent() {
