@@ -1077,6 +1077,8 @@
   "evaluation": {
     "th": {
       "page_title": "การประเมินผล",
+      "hero_title": "การประเมินผลระบบ",
+      "hero_subtitle": "ความคิดเห็นของคุณคือกุญแจสำคัญในการพัฒนาประสบการณ์การเข้าชมให้ดียิ่งขึ้น",
       "section_title": "แบบประเมินความพึงพอใจ",
       "section_desc": "ประเมินประสิทธิภาพระบบนำชมเสมือนจริง ตามหลักการวิจัยและพัฒนา (R&D)",
       "tabs": {
@@ -1155,6 +1157,8 @@
         "interpretation": "ระดับความพึงพอใจ",
         "dimension_mean": "ค่าเฉลี่ยด้าน",
         "chart_title": "กราฟเปรียบเทียบค่าเฉลี่ยแต่ละด้าน",
+        "reviews_title": "รีวิวจากผู้ใช้งานจริง",
+        "reviews_empty": "ยังไม่มีรีวิวในขณะนี้ เป็นคนแรกที่ร่วมประเมิน!",
         "criteria": {
           "4.51-5.00": "มากที่สุด",
           "3.51-4.50": "มาก",
@@ -1166,6 +1170,8 @@
     },
     "en": {
       "page_title": "Evaluation",
+      "hero_title": "System Evaluation",
+      "hero_subtitle": "Your feedback is the key to improving the visiting experience",
       "section_title": "User Satisfaction Survey",
       "section_desc": "Evaluate the effectiveness of the virtual tour system based on Research & Development (R&D) methodology",
       "tabs": {
@@ -1244,6 +1250,8 @@
         "interpretation": "Satisfaction Level",
         "dimension_mean": "Dimension Mean",
         "chart_title": "Comparison Chart by Dimension",
+        "reviews_title": "Real User Reviews",
+        "reviews_empty": "No reviews yet. Be the first to evaluate!",
         "criteria": {
           "4.51-5.00": "Very High",
           "3.51-4.50": "High",
@@ -1255,6 +1263,8 @@
     },
     "zh": {
       "page_title": "评估",
+      "hero_title": "系统评估",
+      "hero_subtitle": "您的意见是提升参观体验的关键",
       "section_title": "用户满意度调查",
       "section_desc": "基于研发（R&D）方法评估虚拟导览系统的有效性",
       "tabs": {
@@ -1333,6 +1343,8 @@
         "interpretation": "满意度等级",
         "dimension_mean": "维度平均值",
         "chart_title": "各维度对比图",
+        "reviews_title": "真实用户评价",
+        "reviews_empty": "暂无评价，成为第一个评价的人吧！",
         "criteria": {
           "4.51-5.00": "最高",
           "3.51-4.50": "高",

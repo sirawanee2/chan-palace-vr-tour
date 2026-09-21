@@ -15,6 +15,7 @@ class EvaluationSystem {
     async init() {
         await this.loadContent();
         this.setupLanguage();
+        this.renderHero();
         this.renderTabs();
         this.renderContent();
         this.setupNavigation();
@@ -49,8 +50,21 @@ class EvaluationSystem {
         const url = new URL(window.location);
         url.searchParams.set('lang', lang);
         window.history.replaceState({}, '', url);
+        // main.js also listens on .lang-btn clicks and overwrites .hero-title/
+        // .hero-subtitle with the homepage's own text; defer so this runs after
+        // every same-tick click handler, regardless of listener attach order.
+        setTimeout(() => this.renderHero(), 0);
         this.renderContent();
         this.renderTabs();
+    }
+
+    renderHero() {
+        const data = this.content?.evaluation?.[this.currentLang];
+        if (!data) return;
+        const titleEl = document.querySelector('.hero-title');
+        const subtitleEl = document.querySelector('.hero-subtitle');
+        if (titleEl && data.hero_title) titleEl.textContent = data.hero_title;
+        if (subtitleEl && data.hero_subtitle) subtitleEl.textContent = data.hero_subtitle;
     }
 
     setupNavigation() {
@@ -235,7 +249,8 @@ class EvaluationSystem {
             name: formData.get('name') || `ผู้ตอบแบบสอบถาม ${this.responses.length + 1}`,
             role: formData.get('role'),
             timestamp: new Date().toISOString(),
-            scores: scores
+            scores: scores,
+            source: 'user'
         };
 
         this.responses.push(response);
@@ -347,11 +362,47 @@ class EvaluationSystem {
                         </tbody>
                     </table>
                 </div>
+
+                <div class="reviews-section">
+                    <h4>${data.results.reviews_title || 'รีวิวจากผู้ใช้งานจริง'}</h4>
+                    <div class="reviews-list">
+                        ${(() => {
+                            const userReviews = this.responses.filter(r => r.source === 'user').slice().reverse();
+                            if (userReviews.length === 0) {
+                                return `<p class="reviews-empty">${data.results.reviews_empty || 'ยังไม่มีรีวิวในขณะนี้ เป็นคนแรกที่ร่วมประเมิน!'}</p>`;
+                            }
+                            return userReviews.map(r => this.renderReviewCard(r)).join('');
+                        })()}
+                    </div>
+                </div>
             </div>
         `;
 
         container.innerHTML = html;
         this.drawChart(stats);
+    }
+
+    renderReviewCard(r) {
+        const mean = this.calculatePersonalMean(r.scores);
+        const locale = this.currentLang === 'th' ? 'th-TH' : this.currentLang === 'zh' ? 'zh-CN' : 'en-US';
+        const date = new Date(r.timestamp).toLocaleDateString(locale);
+
+        return `
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="review-name">${this.escapeHtml(r.name)}</span>
+                    <span class="review-role">${this.escapeHtml(r.role || '')}</span>
+                    <span class="review-date">${date}</span>
+                </div>
+                <div class="review-score">${mean.toFixed(2)} / 5.00</div>
+            </div>
+        `;
+    }
+
+    escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
     }
 
     calculateStatistics() {
