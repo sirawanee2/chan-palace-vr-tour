@@ -254,7 +254,7 @@ class EvaluationSystem {
         });
 
         const response = {
-            name: formData.get('name') || `ผู้ตอบแบบสอบถาม ${this.responses.length + 1}`,
+            name: (formData.get('name') || '').trim() || '-',
             role: formData.get('role'),
             feedback: (formData.get('feedback') || '').trim(),
             timestamp: new Date().toISOString(),
