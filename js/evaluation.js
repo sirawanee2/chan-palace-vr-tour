@@ -25,6 +25,7 @@ class EvaluationSystem {
         this.currentLang = 'th';
         this.content = null;
         this.responses = [];
+        this.responsesLoaded = false;
         this.currentTab = 'questionnaire';
         this.init();
     }
@@ -84,6 +85,7 @@ class EvaluationSystem {
                     return validDate && hasScores && !isTestRow;
                 });
                 localStorage.setItem('chan_palace_reviews_cache', JSON.stringify(this.responses));
+                this.responsesLoaded = true;
                 return;
             } catch (error) {
                 console.error(`Error loading shared reviews (attempt ${attempt}/6):`, error);
@@ -97,6 +99,7 @@ class EvaluationSystem {
         } catch (e) {
             this.responses = [];
         }
+        this.responsesLoaded = true;
     }
 
     async loadContent() {
@@ -335,6 +338,20 @@ class EvaluationSystem {
     renderResults(container) {
         const data = this.content.evaluation[this.currentLang];
         const stats = this.calculateStatistics();
+
+        if (!this.responsesLoaded) {
+            container.innerHTML = `
+                <div class="results-container">
+                    <div class="reviews-section">
+                        <p class="reviews-empty">
+                            <span class="reviews-loading-spinner"></span>
+                            ${data.results.reviews_loading}
+                        </p>
+                    </div>
+                </div>
+            `;
+            return;
+        }
 
         if (stats.total === 0) {
             container.innerHTML = `

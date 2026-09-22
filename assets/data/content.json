@@ -1159,6 +1159,7 @@
         "feedback_count": "รีวิวที่มีข้อเสนอแนะ",
         "reviews_title": "รีวิวจากผู้ใช้งานจริง",
         "reviews_empty": "ยังไม่มีรีวิวในขณะนี้ เป็นคนแรกที่ร่วมประเมิน!",
+        "reviews_loading": "กำลังโหลดผลการประเมิน...",
         "criteria": {
           "4.51-5.00": "มากที่สุด",
           "3.51-4.50": "มาก",
@@ -1252,6 +1253,7 @@
         "feedback_count": "Reviews with Feedback",
         "reviews_title": "Real User Reviews",
         "reviews_empty": "No reviews yet. Be the first to evaluate!",
+        "reviews_loading": "Loading results...",
         "criteria": {
           "4.51-5.00": "Very High",
           "3.51-4.50": "High",
@@ -1345,6 +1347,7 @@
         "feedback_count": "提供建议的评价数",
         "reviews_title": "真实用户评价",
         "reviews_empty": "暂无评价，成为第一个评价的人吧！",
+        "reviews_loading": "正在加载评估结果...",
         "criteria": {
           "4.51-5.00": "最高",
           "3.51-4.50": "高",
