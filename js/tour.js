@@ -52,6 +52,10 @@ class TourController {
         this.currentUtterance = null;
         this.currentAudio = null;
         this.isSpeaking = false;
+        // Identifies which location/layer/language the loaded audio or
+        // paused utterance belongs to, so pressing play after stop resumes
+        // that same clip instead of restarting it from the beginning.
+        this.speechKey = null;
         this.routeDest = null;
         this.init();
     }
@@ -617,7 +621,7 @@ class TourController {
 
     toggleSpeech() {
         if (this.isSpeaking) {
-            this.stopSpeech();
+            this.pauseSpeech();
         } else {
             this.startSpeech();
         }
@@ -627,14 +631,35 @@ class TourController {
         const location = this.getCurrentLocation();
         if (!location) return;
 
-        // Stop anything currently playing first
-        this.stopSpeech();
-
         // Try the pre-generated narration file first, for every language:
         //   audio/<lang>/<locationId>_<layer>.mp3
         // (th = Microsoft Edge "Premwadee" neural voice; en/zh = Sia AI.)
         // If the file is missing, we fall back to the browser's speech engine.
         const audioPath = `audio/${this.currentLang}/${this.currentLocationId}_${this.currentLayer}.mp3`;
+
+        // Resume exactly where the visitor left off if they paused this same
+        // clip, instead of restarting it from the beginning.
+        if (this.speechKey === audioPath) {
+            if (this.currentAudio && !this.currentAudio.ended) {
+                this.currentAudio.play().catch(() => this.startBrowserSpeech(location));
+                return;
+            }
+            if (this.synth && this.synth.paused) {
+                this.synth.resume();
+                this.setSpeakingUI(true);
+                clearInterval(this._resumeTimer);
+                this._resumeTimer = setInterval(() => {
+                    if (this.synth.speaking) this.synth.resume();
+                    else clearInterval(this._resumeTimer);
+                }, 6000);
+                return;
+            }
+        }
+
+        // Different clip (or nothing to resume) — stop whatever's playing
+        // and start this one from the beginning.
+        this.stopSpeech();
+        this.speechKey = audioPath;
 
         this.currentAudio = new Audio(audioPath);
 
@@ -720,8 +745,26 @@ class TourController {
         }, 130);
     }
 
+    // Pauses playback in place (from the "stop" button) so pressing play
+    // again resumes from this exact position, via the speechKey check in
+    // startSpeech().
+    pauseSpeech() {
+        clearInterval(this._resumeTimer);
+        if (this.currentAudio) {
+            this.currentAudio.pause();
+        }
+        if (this.synth && this.synth.speaking) {
+            this.synth.pause();
+        }
+        this.setSpeakingUI(false);
+    }
+
+    // Fully stops and discards playback — used when switching location or
+    // layer (a different clip should never "resume" as if it were this one)
+    // and on page unload.
     stopSpeech() {
         clearInterval(this._resumeTimer);
+        this.speechKey = null;
         if (this.currentAudio) {
             this.currentAudio.pause();
             this.currentAudio.currentTime = 0;
