@@ -33,8 +33,20 @@ class EvaluationSystem {
     async init() {
         await this.loadContent();
         this.setupLanguage();
+        if (window.EvalGuide) this.guide = new EvalGuide(this);
         this.renderHero();
         this.renderTabs();
+        // Show last visit's cached reviews immediately instead of a spinner
+        // — the Sheets fetch below will silently refresh them once it
+        // resolves. Only a visitor's very first-ever visit (no cache yet)
+        // still sees the loading state.
+        try {
+            const cached = JSON.parse(localStorage.getItem('chan_palace_reviews_cache') || 'null');
+            if (cached) {
+                this.responses = cached;
+                this.responsesLoaded = true;
+            }
+        } catch (e) { /* ignore corrupt cache */ }
         this.renderContent();
         this.setupNavigation();
         // Don't block the page on the Sheets fetch — it can be slow or
@@ -191,6 +203,7 @@ class EvaluationSystem {
                 this.renderResults(container);
                 break;
         }
+        this.guide?.onRender(this.currentTab);
     }
 
     renderQuestionnaire(container) {
@@ -325,6 +338,7 @@ class EvaluationSystem {
         `;
         form.innerHTML = '';
         form.appendChild(successMsg);
+        this.guide?.celebrate();
     }
 
     calculatePersonalMean(scores) {

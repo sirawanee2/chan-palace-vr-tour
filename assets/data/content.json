@@ -8,19 +8,21 @@
         "name": "วิหารหลวงพ่อพระพุทธชินราช",
         "short_name": "พระพุทธชินราช",
         "summary": "พระพุทธรูปคู่บ้านคู่เมืองพิษณุโลก งดงามตามแบบศิลปะสุโขทัย ประดิษฐานริมแม่น้ำน่าน",
+        "sky_rotation": -90,
         "image_360": "img/pano/01.jpg",
         "thumbnail": "img/thumbs/01.jpg",
+        "audio": { "overview": "01_พระพุทธชินราช_ทั่วไป.mp3", "deep_dive": "01_พระพุทธชินราช_เจาะลึก.mp3" },
         "overview": {
           "title": "ภาพรวม",
           "duration": "55 วินาที",
-          "text": "ยินดีต้อนรับสู่วิหารหลวงพ่อพระพุทธชินราช พระพุทธรูปคู่บ้านคู่เมืองพิษณุโลก หล่อขึ้นในสมัยสุโขทัยเมื่อกว่าเจ็ดร้อยปีก่อน ได้รับการยกย่องว่างดงามที่สุดองค์หนึ่งของไทย ด้วยพุทธลักษณะอันอ่อนช้อยประณีต ทุกวันนี้ยังคงเป็นที่เคารพศรัทธาของพุทธศาสนิกชนทั่วประเทศ",
-          "audio_text": "ยินดีต้อนรับสู่วิหารหลวงพ่อพระพุทธชินราช พระพุทธรูปคู่บ้านคู่เมืองพิษณุโลก หล่อขึ้นในสมัยสุโขทัยเมื่อกว่าเจ็ดร้อยปีก่อน ได้รับการยกย่องว่างดงามที่สุดองค์หนึ่งของไทย ด้วยพุทธลักษณะอันอ่อนช้อยประณีต ทุกวันนี้ยังคงเป็นที่เคารพศรัทธาของพุทธศาสนิกชนทั่วประเทศ"
+          "text": "ยินดีต้อนรับสู่วิหารหลวงพ่อพระพุทธชินราช พระพุทธรูปคู่บ้านคู่เมืองพิษณุโลก หล่อขึ้นในสมัยสุโขทัยเมื่อกว่าหกร้อยปีก่อน ได้รับการยกย่องว่างดงามที่สุดองค์หนึ่งของไทย ด้วยพุทธลักษณะอันอ่อนช้อยประณีต ทุกวันนี้ยังคงเป็นที่เคารพศรัทธาของพุทธศาสนิกชนทั่วประเทศ",
+          "audio_text": "ยินดีต้อนรับสู่วิหารหลวงพ่อพระพุทธชินราช พระพุทธรูปคู่บ้านคู่เมืองพิษณุโลก หล่อขึ้นในสมัยสุโขทัยเมื่อกว่าหกร้อยปีก่อน ได้รับการยกย่องว่างดงามที่สุดองค์หนึ่งของไทย ด้วยพุทธลักษณะอันอ่อนช้อยประณีต ทุกวันนี้ยังคงเป็นที่เคารพศรัทธาของพุทธศาสนิกชนทั่วประเทศ"
         },
         "deep_dive": {
           "title": "เจาะลึก",
           "duration": "2 นาที 55 วินาที",
-          "text": "พระพุทธชินราชสร้างขึ้นราวปีพุทธศักราชหนึ่งพันเก้าร้อย ตรงกับรัชสมัยพระมหาธรรมราชาที่หนึ่ง หรือพระยาลิไท แห่งกรุงสุโขทัย พระองค์โปรดให้หล่อพระพุทธรูปพร้อมกันสามองค์ เพื่อประดิษฐานเป็นพระประธานในวัดพระศรีรัตนมหาธาตุ โดยเชิญช่างฝีมือจากเมืองศรีสัชนาลัย เชียงแสน และหริภุญชัย มาร่วมกันสร้างสรรค์ พระองค์แรกและองค์ที่สองหล่อสำเร็จโดยง่าย แต่องค์ที่สามกลับหล่อไม่สำเร็จถึงสามครั้ง จนเมื่อครั้งที่สี่ ปรากฏชีปะขาวลึกลับมาช่วยงานหล่อจนสำเร็จ แล้วหายตัวไปโดยไม่มีผู้ใดพบเห็นอีกเลย ชาวบ้านจึงเรียกพระพุทธรูปองค์นี้ว่า พระพุทธชินราช อันหมายถึงพระผู้ทรงชัยชนะเหนือหมู่มาร ด้วยพุทธลักษณะที่งดงามเป็นเลิศ พระพักตร์รูปไข่ พระเกตุมาลาเป็นเปลวเพลิง ซุ้มเรือนแก้วแกะสลักลวดลายวิจิตร ทำให้พระพุทธชินราชได้รับการยกย่องว่าเป็นหนึ่งในพระพุทธรูปที่งดงามที่สุดในประเทศไทย จนมีการจำลององค์ไปประดิษฐานยังวัดเบญจมบพิตรและวัดต่างๆ ทั่วประเทศ",
-          "audio_text": "พระพุทธชินราชสร้างขึ้นราวปีพุทธศักราชหนึ่งพันเก้าร้อย ตรงกับรัชสมัยพระมหาธรรมราชาที่หนึ่ง หรือพระยาลิไท แห่งกรุงสุโขทัย พระองค์โปรดให้หล่อพระพุทธรูปพร้อมกันสามองค์ เพื่อประดิษฐานเป็นพระประธานในวัดพระศรีรัตนมหาธาตุ โดยเชิญช่างฝีมือจากเมืองศรีสัชนาลัย เชียงแสน และหริภุญชัย มาร่วมกันสร้างสรรค์ พระองค์แรกและองค์ที่สองหล่อสำเร็จโดยง่าย แต่องค์ที่สามกลับหล่อไม่สำเร็จถึงสามครั้ง จนเมื่อครั้งที่สี่ ปรากฏชีปะขาวลึกลับมาช่วยงานหล่อจนสำเร็จ แล้วหายตัวไปโดยไม่มีผู้ใดพบเห็นอีกเลย ชาวบ้านจึงเรียกพระพุทธรูปองค์นี้ว่า พระพุทธชินราช อันหมายถึงพระผู้ทรงชัยชนะเหนือหมู่มาร ด้วยพุทธลักษณะที่งดงามเป็นเลิศ พระพักตร์รูปไข่ พระเกตุมาลาเป็นเปลวเพลิง ซุ้มเรือนแก้วแกะสลักลวดลายวิจิตร ทำให้พระพุทธชินราชได้รับการยกย่องว่าเป็นหนึ่งในพระพุทธรูปที่งดงามที่สุดในประเทศไทย จนมีการจำลององค์ไปประดิษฐานยังวัดเบญจมบพิตรและวัดต่างๆ ทั่วประเทศ"
+          "text": "พระพุทธชินราชสร้างขึ้นราวปีพุทธศักราชหนึ่งพันเก้าร้อย ตรงกับรัชสมัยพระมหาธรรมราชาที่หนึ่ง หรือพระยาลิไท แห่งกรุงสุโขทัย พระองค์โปรดให้หล่อพระพุทธรูปพร้อมกันสามองค์ เพื่อประดิษฐานเป็นพระประธานในวัดพระศรีรัตนมหาธาตุ โดยเชิญช่างฝีมือจากเมืองศรีสัชนาลัยและหริภุญชัย มาร่วมกันสร้างสรรค์ พระองค์แรกและองค์ที่สองหล่อสำเร็จโดยง่าย แต่องค์ที่สามกลับหล่อไม่สำเร็จถึงสามครั้ง จนเมื่อครั้งที่สี่ ปรากฏชีปะขาวลึกลับมาช่วยงานหล่อจนสำเร็จ แล้วหายตัวไปโดยไม่มีผู้ใดพบเห็นอีกเลย ชาวบ้านจึงเรียกพระพุทธรูปองค์นี้ว่า พระพุทธชินราช อันหมายถึงพระผู้ทรงชัยชนะเหนือหมู่มาร ด้วยพุทธลักษณะที่งดงามเป็นเลิศ พระพักตร์รูปไข่ พระเกตุมาลาเป็นเปลวเพลิง ซุ้มเรือนแก้วแกะสลักลวดลายวิจิตร ทำให้พระพุทธชินราชได้รับการยกย่องว่าเป็นหนึ่งในพระพุทธรูปที่งดงามที่สุดในประเทศไทย จนมีการจำลององค์ไปประดิษฐานยังวัดเบญจมบพิตรและวัดต่างๆ ทั่วประเทศ",
+          "audio_text": "พระพุทธชินราชสร้างขึ้นราวปีพุทธศักราชหนึ่งพันเก้าร้อย ตรงกับรัชสมัยพระมหาธรรมราชาที่หนึ่ง หรือพระยาลิไท แห่งกรุงสุโขทัย พระองค์โปรดให้หล่อพระพุทธรูปพร้อมกันสามองค์ เพื่อประดิษฐานเป็นพระประธานในวัดพระศรีรัตนมหาธาตุ โดยเชิญช่างฝีมือจากเมืองศรีสัชนาลัยและหริภุญชัย มาร่วมกันสร้างสรรค์ พระองค์แรกและองค์ที่สองหล่อสำเร็จโดยง่าย แต่องค์ที่สามกลับหล่อไม่สำเร็จถึงสามครั้ง จนเมื่อครั้งที่สี่ ปรากฏชีปะขาวลึกลับมาช่วยงานหล่อจนสำเร็จ แล้วหายตัวไปโดยไม่มีผู้ใดพบเห็นอีกเลย ชาวบ้านจึงเรียกพระพุทธรูปองค์นี้ว่า พระพุทธชินราช อันหมายถึงพระผู้ทรงชัยชนะเหนือหมู่มาร ด้วยพุทธลักษณะที่งดงามเป็นเลิศ พระพักตร์รูปไข่ พระเกตุมาลาเป็นเปลวเพลิง ซุ้มเรือนแก้วแกะสลักลวดลายวิจิตร ทำให้พระพุทธชินราชได้รับการยกย่องว่าเป็นหนึ่งในพระพุทธรูปที่งดงามที่สุดในประเทศไทย จนมีการจำลององค์ไปประดิษฐานยังวัดเบญจมบพิตรและวัดต่างๆ ทั่วประเทศ"
         },
         "topics": [
           {
@@ -55,11 +57,13 @@
       },
       {
         "id": "wat_pra_attharos",
-        "name": "โบราณสถานวัดปรางค์หลวง",
-        "short_name": "วัดปรางค์หลวง",
-        "summary": "โบราณสถานเมืองพิษณุโลกเก่า มีปรางค์อิฐทรงสูงเป็นประธานของวัด",
+        "name": "พระปรางค์ประธาน",
+        "short_name": "พระปรางค์ประธาน",
+        "summary": "พระปรางค์ศูนย์กลางของวัดพระศรีรัตนมหาธาตุ ประดิษฐานพระบรมสารีริกธาตุ",
+        "sky_rotation": -90,
         "image_360": "img/pano/02.jpg",
         "thumbnail": "img/thumbs/02.jpg",
+        "audio": { "overview": "02_พระปรางค์ประธาน_ทั่วไป.mp3", "deep_dive": "02_พระปรางค์ประธาน_เจาะลึก.mp3" },
         "overview": {
           "title": "ภาพรวม",
           "duration": "55 วินาที",
@@ -77,29 +81,29 @@
             "id": "significance",
             "title": "ความสำคัญ / วันสำคัญ",
             "duration": "35 วินาที",
-            "text": "วัดปรางค์หลวงเป็นหลักฐานสำคัญที่แสดงผังเมืองและความรุ่งเรืองทางพระพุทธศาสนาของเมืองพิษณุโลกโบราณ ปัจจุบันเป็นโบราณสถานขึ้นทะเบียน ใช้เป็นแหล่งเรียนรู้ทางประวัติศาสตร์และโบราณคดี ไม่มีการประกอบศาสนกิจประจำ",
-            "audio_text": "วัดปรางค์หลวงเป็นโบราณสถานขึ้นทะเบียน สำคัญในฐานะหลักฐานผังเมืองและความรุ่งเรืองทางพระพุทธศาสนาของพิษณุโลกโบราณ"
+            "text": "พระปรางค์ประธานเป็นศูนย์กลางของวัดพระศรีรัตนมหาธาตุ ประดิษฐานพระบรมสารีริกธาตุ เป็นที่เคารพสักการะของพุทธศาสนิกชน และคึกคักเป็นพิเศษในวันสำคัญทางพระพุทธศาสนาและช่วงงานสมโภชพระพุทธชินราช",
+            "audio_text": "พระปรางค์ประธานเป็นศูนย์กลางของวัดพระศรีรัตนมหาธาตุ ประดิษฐานพระบรมสารีริกธาตุ เป็นที่เคารพสักการะของพุทธศาสนิกชน และคึกคักเป็นพิเศษในวันสำคัญทางพระพุทธศาสนาและช่วงงานสมโภชพระพุทธชินราช"
           },
           {
             "id": "beauty",
             "title": "ความงามและศิลปกรรม",
             "duration": "40 วินาที",
-            "text": "จุดเด่นคือปรางค์ประธานทรงสูงก่อด้วยอิฐ ตั้งบนฐานสี่เหลี่ยมยกเก็จ เรือนธาตุมีซุ้มจระนำประดิษฐานพระพุทธรูป ยอดปรางค์เรียวสอบขึ้นไปตามแบบปรางค์อยุธยาตอนต้นที่คลี่คลายจากปรางค์เขมร เคยมีลวดลายปูนปั้นประดับซึ่งพบเป็นชิ้นส่วนจากการขุดแต่ง",
-            "audio_text": "ปรางค์ประธานทรงสูงก่อด้วยอิฐบนฐานยกเก็จ ยอดเรียวสอบตามแบบปรางค์อยุธยาตอนต้น เคยประดับด้วยลวดลายปูนปั้น"
+            "text": "พระปรางค์ตั้งอยู่กลางผังวัด รายล้อมด้วยพระวิหารสี่ทิศและพระระเบียงสองชั้น ยอดปรางค์สูงเด่นเหนือแนวหลังคาพระวิหาร มองเห็นได้แต่ไกลจากริมแม่น้ำน่าน",
+            "audio_text": "พระปรางค์ตั้งอยู่กลางผังวัด รายล้อมด้วยพระวิหารสี่ทิศและพระระเบียงสองชั้น ยอดปรางค์สูงเด่นเหนือแนวหลังคาพระวิหาร มองเห็นได้แต่ไกลจากริมแม่น้ำน่าน"
           },
           {
             "id": "founding",
             "title": "การก่อตั้ง",
             "duration": "35 วินาที",
-            "text": "จากรูปแบบสถาปัตยกรรม สันนิษฐานว่าวัดปรางค์หลวงสร้างขึ้นในสมัยอยุธยาตอนต้น ราวพุทธศตวรรษที่ 20 ช่วงที่พิษณุโลกมีฐานะเป็นเมืองลูกหลวงและราชธานีคู่ของกรุงศรีอยุธยา ยังไม่พบเอกสารระบุผู้สร้างและปีที่สร้างแน่ชัด",
-            "audio_text": "สันนิษฐานว่าสร้างในสมัยอยุธยาตอนต้น ราวพุทธศตวรรษที่ 20 เมื่อพิษณุโลกเป็นราชธานีคู่ของกรุงศรีอยุธยา ยังไม่พบหลักฐานผู้สร้าง"
+            "text": "สร้างขึ้นพร้อมกับวัดพระศรีรัตนมหาธาตุ ในรัชสมัยพระมหาธรรมราชาที่ 1 (พระยาลิไท) แห่งกรุงสุโขทัย และได้รับการบูรณะต่อมาอีกหลายสมัย",
+            "audio_text": "สร้างขึ้นพร้อมกับวัดพระศรีรัตนมหาธาตุ ในรัชสมัยพระมหาธรรมราชาที่ 1 (พระยาลิไท) แห่งกรุงสุโขทัย และได้รับการบูรณะต่อมาอีกหลายสมัย"
           },
           {
             "id": "history",
             "title": "ประวัติและที่มา",
             "duration": "40 วินาที",
-            "text": "วัดปรางค์หลวงตั้งอยู่ในเขตเมืองพิษณุโลกเก่า ใกล้กลุ่มโบราณสถานพระราชวังจันทน์ เมื่อเมืองย้ายศูนย์กลางและวัดถูกทิ้งร้าง กรมศิลปากรได้ดำเนินการขุดแต่งและบูรณะเสริมความมั่นคง พร้อมจัดทำป้ายให้ความรู้แก่ผู้เยี่ยมชม",
-            "audio_text": "วัดตั้งอยู่ในเขตเมืองพิษณุโลกเก่า ใกล้พระราชวังจันทน์ ต่อมาถูกทิ้งร้างและกรมศิลปากรได้ขุดแต่งบูรณะไว้เป็นแหล่งเรียนรู้"
+            "text": "วัดพระศรีรัตนมหาธาตุตั้งอยู่ทางฝั่งตะวันออกของแม่น้ำน่าน ผ่านกาลเวลามากว่าหกศตวรรษ ปัจจุบันยังคงเป็นวัดที่มีการประกอบศาสนกิจ และเป็นศูนย์รวมจิตใจของชาวพิษณุโลก",
+            "audio_text": "วัดพระศรีรัตนมหาธาตุตั้งอยู่ทางฝั่งตะวันออกของแม่น้ำน่าน ผ่านกาลเวลามากว่าหกศตวรรษ ปัจจุบันยังคงเป็นวัดที่มีการประกอบศาสนกิจ และเป็นศูนย์รวมจิตใจของชาวพิษณุโลก"
           }
         ]
       },
@@ -108,8 +112,10 @@
         "name": "วัดวิหารทอง",
         "short_name": "วัดวิหารทอง",
         "summary": "โบราณสถานริมแม่น้ำน่านใกล้พระราชวังจันทน์ เดิมมีวิหารประดิษฐานพระพุทธรูปปางลีลาปิดทอง",
+        "sky_rotation": -73,
         "image_360": "img/pano/03.jpg",
         "thumbnail": "img/thumbs/03.jpg",
+        "audio": { "overview": "03_วัดวิหารทอง_ทั่วไป.mp3", "deep_dive": "03_วัดวิหารทอง_เจาะลึก.mp3" },
         "overview": {
           "title": "ภาพรวม",
           "duration": "50 วินาที",
@@ -155,51 +161,53 @@
       },
       {
         "id": "naresuan_shrine",
-        "name": "วัดศรีสุคต",
-        "short_name": "วัดศรีสุคต",
-        "summary": "โบราณสถานในกลุ่มพระราชวังจันทน์ ปรากฏฐานเจดีย์ทรงระฆังและแนวฐานวิหารร้าง",
+        "name": "อาคารขุนพิเรนทรเทพ",
+        "short_name": "อาคารขุนพิเรนทรเทพ",
+        "summary": "อาคารไม้เก่าในเขตพระราชวังจันทน์ อดีตที่ทำการสำนักงานป่าไม้ภาคพิษณุโลก",
+        "sky_rotation": -90,
         "image_360": "img/pano/04.jpg",
         "thumbnail": "img/thumbs/04.jpg",
+        "audio": { "overview": "04_อาคารขุนพิเรนทรเทพ_ทั่วไป.mp3", "deep_dive": "04_อาคารขุนพิเรนทรเทพ_เจาะลึก.mp3" },
         "overview": {
           "title": "ภาพรวม",
-          "duration": "50 วินาที",
-          "text": "ยินดีต้อนรับสู่วัดศรีสุคต โบราณสถานที่ตั้งอยู่ทางทิศใต้ของพระราชวังจันทน์ โดดเด่นด้วยเจดีย์ประธานทรงสี่เหลี่ยมที่มีซุ้มจระนำประดิษฐานพระพุทธรูปทั้งสี่ทิศ ล้อมรอบด้วยรูปปั้นพระสาวกในท่าประนมมือ สะท้อนพุทธศิลป์ผสมผสานระหว่างสมัยสุโขทัยและอยุธยา",
-          "audio_text": "ยินดีต้อนรับสู่วัดศรีสุคต โบราณสถานที่ตั้งอยู่ทางทิศใต้ของพระราชวังจันทน์ โดดเด่นด้วยเจดีย์ประธานทรงสี่เหลี่ยมที่มีซุ้มจระนำประดิษฐานพระพุทธรูปทั้งสี่ทิศ ล้อมรอบด้วยรูปปั้นพระสาวกในท่าประนมมือ สะท้อนพุทธศิลป์ผสมผสานระหว่างสมัยสุโขทัยและอยุธยา"
+          "duration": "30 วินาที",
+          "text": "ยินดีต้อนรับสู่อาคารขุนพิเรนทรเทพ อาคารไม้เก่าแก่ภายในเขตพระราชวังจันทน์ สร้างขึ้นเมื่อปีพุทธศักราชสองพันสี่ร้อยหกสิบเจ็ด เพื่อเป็นที่ทำการของสำนักงานป่าไม้ภาคพิษณุโลก ปัจจุบันเป็นส่วนหนึ่งของศูนย์ประวัติศาสตร์พระราชวังจันทน์ ส่วนชื่อขุนพิเรนทรเทพ คือพระนามเดิมของสมเด็จพระมหาธรรมราชา พระราชบิดาของสมเด็จพระนเรศวรมหาราช",
+          "audio_text": "ยินดีต้อนรับสู่อาคารขุนพิเรนทรเทพ อาคารไม้เก่าแก่ภายในเขตพระราชวังจันทน์ สร้างขึ้นเมื่อปีพุทธศักราชสองพันสี่ร้อยหกสิบเจ็ด เพื่อเป็นที่ทำการของสำนักงานป่าไม้ภาคพิษณุโลก ปัจจุบันเป็นส่วนหนึ่งของศูนย์ประวัติศาสตร์พระราชวังจันทน์ ส่วนชื่อขุนพิเรนทรเทพ คือพระนามเดิมของสมเด็จพระมหาธรรมราชา พระราชบิดาของสมเด็จพระนเรศวรมหาราช"
         },
         "deep_dive": {
           "title": "เจาะลึก",
-          "duration": "2 นาที 50 วินาที",
-          "text": "วัดศรีสุคตตั้งอยู่ภายในแนวกำแพงเมืองพิษณุโลกฝั่งตะวันตกของแม่น้ำน่าน ถัดลงมาทางใต้ของพระราชวังจันทน์ สันนิษฐานว่าสร้างขึ้นก่อนสมัยสมเด็จพระนเรศวรมหาราช จุดเด่นของวัดคือเจดีย์ประธานก่อด้วยอิฐ ผังรูปสี่เหลี่ยม มีซุ้มจระนำอยู่กึ่งกลางทั้งสี่ด้าน แต่ละซุ้มประดิษฐานพระพุทธรูปปูนปั้นปางมารวิชัย ขนาบข้างด้วยรูปปั้นพระสาวกยืนประนมมือ เรียงรายรอบฐานเจดีย์ เป็นเอกลักษณ์เฉพาะของงานพุทธศิลป์แบบสุโขทัย ส่วนองค์เจดีย์ด้านบนได้พังทลายลงมาหมดแล้ว สันนิษฐานว่าเดิมอาจเป็นเจดีย์ทรงระฆังตามอิทธิพลศิลปะอยุธยาที่เข้ามาผสมผสานในภายหลัง ด้านหน้าเจดีย์ประธานยังพบร่องรอยฐานอาคารซึ่งสันนิษฐานว่าเคยเป็นพระวิหาร แม้กาลเวลาจะทำให้สิ่งก่อสร้างต่างๆ ทรุดโทรมไปตามธรรมชาติ แต่ร่องรอยที่หลงเหลืออยู่นี้ก็ยังเป็นหลักฐานสำคัญที่ช่วยให้นักโบราณคดีศึกษาพัฒนาการทางสถาปัตยกรรมและศิลปกรรมของเมืองพิษณุโลกในอดีตได้เป็นอย่างดี",
-          "audio_text": "วัดศรีสุคตตั้งอยู่ภายในแนวกำแพงเมืองพิษณุโลกฝั่งตะวันตกของแม่น้ำน่าน ถัดลงมาทางใต้ของพระราชวังจันทน์ สันนิษฐานว่าสร้างขึ้นก่อนสมัยสมเด็จพระนเรศวรมหาราช จุดเด่นของวัดคือเจดีย์ประธานก่อด้วยอิฐ ผังรูปสี่เหลี่ยม มีซุ้มจระนำอยู่กึ่งกลางทั้งสี่ด้าน แต่ละซุ้มประดิษฐานพระพุทธรูปปูนปั้นปางมารวิชัย ขนาบข้างด้วยรูปปั้นพระสาวกยืนประนมมือ เรียงรายรอบฐานเจดีย์ เป็นเอกลักษณ์เฉพาะของงานพุทธศิลป์แบบสุโขทัย ส่วนองค์เจดีย์ด้านบนได้พังทลายลงมาหมดแล้ว สันนิษฐานว่าเดิมอาจเป็นเจดีย์ทรงระฆังตามอิทธิพลศิลปะอยุธยาที่เข้ามาผสมผสานในภายหลัง ด้านหน้าเจดีย์ประธานยังพบร่องรอยฐานอาคารซึ่งสันนิษฐานว่าเคยเป็นพระวิหาร แม้กาลเวลาจะทำให้สิ่งก่อสร้างต่างๆ ทรุดโทรมไปตามธรรมชาติ แต่ร่องรอยที่หลงเหลืออยู่นี้ก็ยังเป็นหลักฐานสำคัญที่ช่วยให้นักโบราณคดีศึกษาพัฒนาการทางสถาปัตยกรรมและศิลปกรรมของเมืองพิษณุโลกในอดีตได้เป็นอย่างดี"
+          "duration": "45 วินาที",
+          "text": "อาคารขุนพิเรนทรเทพสร้างขึ้นเมื่อปีพุทธศักราชสองพันสี่ร้อยหกสิบเจ็ด เป็นที่ทำการของสำนักงานป่าไม้ภาคพิษณุโลก ตัวอาคารสร้างด้วยไม้เนื้อแข็งและไม้สัก หลังคาทรงปั้นหยา มีบันไดขึ้นตรงกลางและมีมุขยื่นออกทั้งสองข้าง ชื่อขุนพิเรนทรเทพ คือพระนามเดิมของสมเด็จพระมหาธรรมราชา ผู้ครองเมืองพิษณุโลก และเป็นพระราชบิดาของสมเด็จพระนเรศวรมหาราช ส่วนอาคารพระสวัสดิราชที่อยู่ใกล้กัน มีชื่อตามพระราชมารดาของพระองค์ ชื่ออาคารทั้งสองหลังจึงชวนให้ระลึกถึงพระราชบิดาและพระราชมารดาของสมเด็จพระนเรศวร ผู้ประสูติ ณ พระราชวังจันทน์แห่งนี้",
+          "audio_text": "อาคารขุนพิเรนทรเทพสร้างขึ้นเมื่อปีพุทธศักราชสองพันสี่ร้อยหกสิบเจ็ด เป็นที่ทำการของสำนักงานป่าไม้ภาคพิษณุโลก ตัวอาคารสร้างด้วยไม้เนื้อแข็งและไม้สัก หลังคาทรงปั้นหยา มีบันไดขึ้นตรงกลางและมีมุขยื่นออกทั้งสองข้าง ชื่อขุนพิเรนทรเทพ คือพระนามเดิมของสมเด็จพระมหาธรรมราชา ผู้ครองเมืองพิษณุโลก และเป็นพระราชบิดาของสมเด็จพระนเรศวรมหาราช ส่วนอาคารพระสวัสดิราชที่อยู่ใกล้กัน มีชื่อตามพระราชมารดาของพระองค์ ชื่ออาคารทั้งสองหลังจึงชวนให้ระลึกถึงพระราชบิดาและพระราชมารดาของสมเด็จพระนเรศวร ผู้ประสูติ ณ พระราชวังจันทน์แห่งนี้"
         },
         "topics": [
           {
             "id": "significance",
             "title": "ความสำคัญ / วันสำคัญ",
             "duration": "35 วินาที",
-            "text": "วัดศรีสุคตเป็นส่วนหนึ่งของกลุ่มโบราณสถานพระราชวังจันทน์ ช่วยให้เห็นภาพเครือข่ายวัดที่รายล้อมพระราชวังในอดีต ปัจจุบันเป็นพื้นที่อนุรักษ์เพื่อการศึกษา ไม่มีการใช้ประกอบพิธีกรรมประจำ",
-            "audio_text": "วัดศรีสุคตเป็นส่วนหนึ่งของกลุ่มโบราณสถานพระราชวังจันทน์ ช่วยให้เห็นเครือข่ายวัดที่รายล้อมพระราชวังในอดีต ปัจจุบันเป็นพื้นที่อนุรักษ์เพื่อการศึกษา"
+            "text": "อาคารขุนพิเรนทรเทพเป็นส่วนหนึ่งของศูนย์ประวัติศาสตร์พระราชวังจันทน์ และเป็นอาคารไม้เก่าที่ยังคงอยู่ในเขตพระราชวังจันทน์ คู่กับอาคารพระสวัสดิราช",
+            "audio_text": "อาคารขุนพิเรนทรเทพเป็นส่วนหนึ่งของศูนย์ประวัติศาสตร์พระราชวังจันทน์ และเป็นอาคารไม้เก่าที่ยังคงอยู่ในเขตพระราชวังจันทน์ คู่กับอาคารพระสวัสดิราช"
           },
           {
             "id": "beauty",
             "title": "ความงามและศิลปกรรม",
             "duration": "35 วินาที",
-            "text": "หลักฐานที่พบคือฐานเจดีย์ประธานทรงระฆังและแนวฐานวิหารหันหน้าไปทางทิศตะวันออก การวางผังแบบวิหารนำหน้าเจดีย์เป็นแบบแผนที่พบทั่วไปในวัดสมัยอยุธยา ให้ภาพความเรียบง่ายแต่ได้สัดส่วนของสถาปัตยกรรมพื้นถิ่น",
-            "audio_text": "พบฐานเจดีย์ทรงระฆังและแนวฐานวิหารหันหน้าทางทิศตะวันออก เป็นการวางผังแบบวิหารนำหน้าเจดีย์ตามแบบวัดสมัยอยุธยา"
+            "text": "อาคารไม้เนื้อแข็งและไม้สัก พื้นที่ใช้สอยราว 512 ตารางเมตร หลังคาทรงปั้นหยา มีบันไดขึ้นตรงกลางและมุขยื่นออกทั้งสองข้าง",
+            "audio_text": "อาคารไม้เนื้อแข็งและไม้สัก พื้นที่ใช้สอยราว 512 ตารางเมตร หลังคาทรงปั้นหยา มีบันไดขึ้นตรงกลางและมุขยื่นออกทั้งสองข้าง"
           },
           {
             "id": "founding",
             "title": "การก่อตั้ง",
             "duration": "30 วินาที",
-            "text": "โบราณวัตถุที่พบ เช่น เครื่องถ้วยและชิ้นส่วนพระพุทธรูปปูนปั้น บ่งชี้ว่าวัดศรีสุคตน่าจะสร้างและใช้งานในสมัยอยุธยา ต่อเนื่องมาถึงต้นรัตนโกสินทร์ ยังไม่พบเอกสารระบุผู้สร้างและปีที่สร้าง",
-            "audio_text": "โบราณวัตถุที่พบบ่งชี้ว่าสร้างและใช้งานในสมัยอยุธยาต่อเนื่องถึงต้นรัตนโกสินทร์ ยังไม่พบเอกสารระบุผู้สร้าง"
+            "text": "สร้างขึ้นเมื่อ พ.ศ. 2467 เพื่อเป็นที่ทำการของสำนักงานป่าไม้ภาคพิษณุโลก",
+            "audio_text": "สร้างขึ้นเมื่อ พ.ศ. 2467 เพื่อเป็นที่ทำการของสำนักงานป่าไม้ภาคพิษณุโลก"
           },
           {
             "id": "history",
             "title": "ประวัติและที่มา",
             "duration": "35 วินาที",
-            "text": "เมื่อบทบาทของพระราชวังจันทน์ลดลงหลังสิ้นสมัยอยุธยา วัดโดยรอบรวมถึงวัดศรีสุคตก็ถูกทิ้งร้าง ต่อมากรมศิลปากรได้สำรวจ ขุดแต่ง และขึ้นทะเบียนเป็นโบราณสถานร่วมกับพระราชวังจันทน์",
-            "audio_text": "หลังสิ้นสมัยอยุธยาและบทบาทพระราชวังจันทน์ลดลง วัดศรีสุคตถูกทิ้งร้าง ต่อมากรมศิลปากรได้ขุดแต่งและขึ้นทะเบียนเป็นโบราณสถาน"
+            "text": "ชื่ออาคารมาจากพระนามเดิมของสมเด็จพระมหาธรรมราชา ผู้ครองเมืองพิษณุโลกและเป็นพระราชบิดาของสมเด็จพระนเรศวรมหาราช ส่วนอาคารพระสวัสดิราชที่อยู่ใกล้กันมีชื่อตามพระราชมารดาของสมเด็จพระนเรศวร",
+            "audio_text": "ชื่ออาคารมาจากพระนามเดิมของสมเด็จพระมหาธรรมราชา ผู้ครองเมืองพิษณุโลกและเป็นพระราชบิดาของสมเด็จพระนเรศวรมหาราช ส่วนอาคารพระสวัสดิราชที่อยู่ใกล้กันมีชื่อตามพระราชมารดาของสมเด็จพระนเรศวร"
           }
         ]
       },
@@ -208,8 +216,10 @@
         "name": "ศาลสมเด็จพระนเรศวรมหาราช",
         "short_name": "ศาลสมเด็จพระนเรศวรฯ",
         "summary": "สถานที่ประสูติของสมเด็จพระนเรศวรมหาราช ศูนย์รวมใจของชาวพิษณุโลก",
+        "sky_rotation": -90,
         "image_360": "img/pano/05.jpg",
         "thumbnail": "img/thumbs/05.jpg",
+        "audio": { "overview": "05_ศาลพระนเรศวร_ทั่วไป.mp3", "deep_dive": "05_ศาลพระนเรศวร_เจาะลึก.mp3" },
         "overview": {
           "title": "ภาพรวม",
           "duration": "50 วินาที",
@@ -258,8 +268,10 @@
         "name": "พระวิหารพระอัฏฐารส",
         "short_name": "พระอัฏฐารส",
         "summary": "พระพุทธรูปยืนองค์ใหญ่สูงราว 18 ศอก คู่บ้านคู่เมืองพิษณุโลกกับพระพุทธชินราช",
+        "sky_rotation": -90,
         "image_360": "img/pano/07.jpg",
         "thumbnail": "img/thumbs/07.jpg",
+        "audio": { "overview": "06_พระอัฏฐารส_ทั่วไป.mp3", "deep_dive": "06_พระอัฏฐารส_เจาะลึก.mp3" },
         "overview": {
           "title": "ภาพรวม",
           "duration": "45 วินาที",
@@ -269,8 +281,8 @@
         "deep_dive": {
           "title": "เจาะลึก",
           "duration": "2 นาที 30 วินาที",
-          "text": "พระอัฏฐารส เป็นพระพุทธรูปยืนปางห้ามญาติ สูงถึงสิบแปดศอก คำว่าอัฏฐารสในภาษาบาลีแปลว่าสิบแปด อันหมายถึงความสูงขององค์พระ ประดิษฐานอยู่ในพระวิหารทางทิศตะวันออกของพระปรางค์ประธาน ภายในวัดพระศรีรัตนมหาธาตุ สร้างขึ้นในคราวเดียวกับพระพุทธชินราชและพระพุทธชินสีห์ เมื่อครั้งพระมหาธรรมราชาที่หนึ่งทรงสถาปนาวัดแห่งนี้ในสมัยสุโขทัย ด้วยพระวรกายที่สูงใหญ่สง่างาม พระหัตถ์ทั้งสองยกขึ้นในท่าประทานอภัย พระพักตร์อิ่มเอิบเปี่ยมด้วยความเมตตา ทำให้พระอัฏฐารสเป็นอีกหนึ่งพระพุทธรูปสำคัญที่มีผู้คนเลื่อมใสศรัทธาไม่แพ้พระพุทธชินราชในวิหารด้านทิศตะวันตก นักท่องเที่ยวที่มาเยือนวัดใหญ่มักแวะกราบสักการะทั้งสี่วิหารครบทุกทิศเพื่อความเป็นสิริมงคล ก่อนจะเดินชมความงดงามของสถาปัตยกรรมโดยรอบพระปรางค์ประธานต่อไป",
-          "audio_text": "พระอัฏฐารส เป็นพระพุทธรูปยืนปางห้ามญาติ สูงถึงสิบแปดศอก คำว่าอัฏฐารสในภาษาบาลีแปลว่าสิบแปด อันหมายถึงความสูงขององค์พระ ประดิษฐานอยู่ในพระวิหารทางทิศตะวันออกของพระปรางค์ประธาน ภายในวัดพระศรีรัตนมหาธาตุ สร้างขึ้นในคราวเดียวกับพระพุทธชินราชและพระพุทธชินสีห์ เมื่อครั้งพระมหาธรรมราชาที่หนึ่งทรงสถาปนาวัดแห่งนี้ในสมัยสุโขทัย ด้วยพระวรกายที่สูงใหญ่สง่างาม พระหัตถ์ทั้งสองยกขึ้นในท่าประทานอภัย พระพักตร์อิ่มเอิบเปี่ยมด้วยความเมตตา ทำให้พระอัฏฐารสเป็นอีกหนึ่งพระพุทธรูปสำคัญที่มีผู้คนเลื่อมใสศรัทธาไม่แพ้พระพุทธชินราชในวิหารด้านทิศตะวันตก นักท่องเที่ยวที่มาเยือนวัดใหญ่มักแวะกราบสักการะทั้งสี่วิหารครบทุกทิศเพื่อความเป็นสิริมงคล ก่อนจะเดินชมความงดงามของสถาปัตยกรรมโดยรอบพระปรางค์ประธานต่อไป"
+          "text": "พระอัฏฐารส เป็นพระพุทธรูปยืนปางห้ามญาติ สูงถึงสิบแปดศอก คำว่าอัฏฐารสในภาษาบาลีแปลว่าสิบแปด อันหมายถึงความสูงขององค์พระ ประดิษฐานอยู่ในพระวิหารทางทิศตะวันออกของพระปรางค์ประธาน ภายในวัดพระศรีรัตนมหาธาตุ สร้างขึ้นในคราวเดียวกับพระพุทธชินราชและพระพุทธชินสีห์ เมื่อครั้งพระมหาธรรมราชาที่หนึ่งทรงสถาปนาวัดแห่งนี้ในสมัยสุโขทัย ด้วยพระวรกายที่สูงใหญ่สง่างาม พระหัตถ์ยกขึ้นแสดงปางห้ามญาติ พระพักตร์อิ่มเอิบเปี่ยมด้วยความเมตตา ทำให้พระอัฏฐารสเป็นอีกหนึ่งพระพุทธรูปสำคัญที่มีผู้คนเลื่อมใสศรัทธาไม่แพ้พระพุทธชินราชในวิหารด้านทิศตะวันตก นักท่องเที่ยวที่มาเยือนวัดใหญ่มักแวะกราบสักการะทั้งสี่วิหารครบทุกทิศเพื่อความเป็นสิริมงคล ก่อนจะเดินชมความงดงามของสถาปัตยกรรมโดยรอบพระปรางค์ประธานต่อไป",
+          "audio_text": "พระอัฏฐารส เป็นพระพุทธรูปยืนปางห้ามญาติ สูงถึงสิบแปดศอก คำว่าอัฏฐารสในภาษาบาลีแปลว่าสิบแปด อันหมายถึงความสูงขององค์พระ ประดิษฐานอยู่ในพระวิหารทางทิศตะวันออกของพระปรางค์ประธาน ภายในวัดพระศรีรัตนมหาธาตุ สร้างขึ้นในคราวเดียวกับพระพุทธชินราชและพระพุทธชินสีห์ เมื่อครั้งพระมหาธรรมราชาที่หนึ่งทรงสถาปนาวัดแห่งนี้ในสมัยสุโขทัย ด้วยพระวรกายที่สูงใหญ่สง่างาม พระหัตถ์ยกขึ้นแสดงปางห้ามญาติ พระพักตร์อิ่มเอิบเปี่ยมด้วยความเมตตา ทำให้พระอัฏฐารสเป็นอีกหนึ่งพระพุทธรูปสำคัญที่มีผู้คนเลื่อมใสศรัทธาไม่แพ้พระพุทธชินราชในวิหารด้านทิศตะวันตก นักท่องเที่ยวที่มาเยือนวัดใหญ่มักแวะกราบสักการะทั้งสี่วิหารครบทุกทิศเพื่อความเป็นสิริมงคล ก่อนจะเดินชมความงดงามของสถาปัตยกรรมโดยรอบพระปรางค์ประธานต่อไป"
         },
         "topics": [
           {
@@ -327,8 +339,10 @@
         "name": "Phra Buddha Chinnarat Shrine",
         "short_name": "Buddha Chinnarat",
         "summary": "Phitsanulok's sacred Buddha image, a masterpiece of Sukhothai art, enshrined beside the Nan River.",
+        "sky_rotation": -90,
         "image_360": "img/pano/01.jpg",
         "thumbnail": "img/thumbs/01.jpg",
+        "audio": { "overview": "01_พระพุทธชินราช_ทั่วไป.mp3", "deep_dive": "01_พระพุทธชินราช_เจาะลึก.mp3" },
         "overview": {
           "title": "Overview",
           "duration": "50 seconds",
@@ -346,8 +360,8 @@
             "id": "significance",
             "title": "Significance & Sacred Days",
             "duration": "45 seconds",
-            "text": "Phra Buddha Chinnarat is Phitsanulok's most sacred image and one of the holiest Buddha statues in Thailand. On Buddhist holy days such as Makha Bucha, Visakha Bucha and Asalha Bucha, large crowds come to make merit and circumambulate the image, and an annual homage fair is held around November.",
-            "audio_text": "Phra Buddha Chinnarat is Phitsanulok's most sacred Buddha image. On major Buddhist holy days large crowds come to pay homage, and an annual homage fair is held around November."
+            "text": "Phra Buddha Chinnarat is Phitsanulok's most sacred image and one of the holiest Buddha statues in Thailand. On Buddhist holy days such as Makha Bucha, Visakha Bucha and Asalha Bucha, large crowds come to make merit and circumambulate the image, and an annual seven-day homage fair is held around Makha Bucha (February–March).",
+            "audio_text": "Phra Buddha Chinnarat is Phitsanulok's most sacred Buddha image. On major Buddhist holy days large crowds come to pay homage, and an annual seven-day homage fair is held around Makha Bucha (February–March)."
           },
           {
             "id": "beauty",
@@ -374,51 +388,53 @@
       },
       {
         "id": "wat_pra_attharos",
-        "name": "Wat Prang Prathan",
-        "short_name": "Wat Prang Prathan",
-        "summary": "A ruined temple in old Phitsanulok, centred on a tall brick prang.",
+        "name": "Phra Prang Prathan (Main Prang)",
+        "short_name": "Main Prang",
+        "summary": "The central prang of Wat Phra Si Rattana Mahathat, enshrining relics of the Buddha.",
+        "sky_rotation": -90,
         "image_360": "img/pano/02.jpg",
         "thumbnail": "img/thumbs/02.jpg",
+        "audio": { "overview": "02_พระปรางค์ประธาน_ทั่วไป.mp3", "deep_dive": "02_พระปรางค์ประธาน_เจาะลึก.mp3" },
         "overview": {
           "title": "Overview",
-          "duration": "45 seconds",
-          "text": "Wat Prang Prathan is an archaeological temple site within the old city of Phitsanulok, centred on a tall Khmer-style prang that reflects a blend of Khmer and early Ayutthaya art with local craftsmanship.",
-          "audio_text": "Welcome to Wat Prang Prathan, a ruined temple built around a tall central prang in the old city of Phitsanulok."
+          "duration": "50 seconds",
+          "text": "Welcome to Phra Prang Prathan, the main prang at the heart of Wat Phra Si Rattana Mahathat. Built together with the temple more than six hundred years ago, it enshrines relics of the Buddha and is surrounded by vihara halls on all four sides. It is an architectural masterpiece that reflects the flourishing of Buddhism in Song Khwae, the old name of Phitsanulok.",
+          "audio_text": "Welcome to Phra Prang Prathan, the main prang at the heart of Wat Phra Si Rattana Mahathat. Built together with the temple more than six hundred years ago, it enshrines relics of the Buddha and is surrounded by vihara halls on all four sides. It is an architectural masterpiece that reflects the flourishing of Buddhism in Song Khwae, the old name of Phitsanulok."
         },
         "deep_dive": {
           "title": "Deep Dive",
-          "duration": "2 min 15 sec",
-          "text": "The temple's principal prang was built of brick and stucco on a redented square base, with a stairway leading up to the relic chamber that once housed a Buddha image. Its architectural style suggests construction in the early Ayutthaya period, around the 15th century, when Phitsanulok served as a royal city and co-capital of Ayutthaya. Excavations have recovered many fragments of decorative stucco and pottery sherds.",
-          "audio_text": "The central prang was built of brick and stucco on a redented base and is thought to date to the early Ayutthaya period, when Phitsanulok was a co-capital of the kingdom."
+          "duration": "2 min 40 sec",
+          "text": "When King Maha Thammaracha I, also known as Phaya Li Thai, founded Wat Phra Si Rattana Mahathat on the east bank of the Nan River, he laid out the temple according to ancient beliefs, placing the prang at its very centre to enshrine relics of the Buddha, like the axis of the universe in the Traiphum cosmology. Four vihara halls surround it in the four directions: the Phra Buddha Chinnarat hall to the west, the Phra Attharos hall to the east, the Phra Buddha Chinnasi hall to the north and the Phra Si Satsada hall to the south, all enclosed by a double cloister. More than six centuries on, the prang still stands as a symbol of Phitsanulok, rising above the skyline along the Nan River and reminding us of the deep faith our ancestors held in Buddhism. Today, visitors to Wat Yai often pause to admire its grace before paying homage to Phra Buddha Chinnarat in the hall in front.",
+          "audio_text": "When King Maha Thammaracha I, also known as Phaya Li Thai, founded Wat Phra Si Rattana Mahathat on the east bank of the Nan River, he laid out the temple according to ancient beliefs, placing the prang at its very centre to enshrine relics of the Buddha, like the axis of the universe in the Traiphum cosmology. Four vihara halls surround it in the four directions: the Phra Buddha Chinnarat hall to the west, the Phra Attharos hall to the east, the Phra Buddha Chinnasi hall to the north and the Phra Si Satsada hall to the south, all enclosed by a double cloister. More than six centuries on, the prang still stands as a symbol of Phitsanulok, rising above the skyline along the Nan River and reminding us of the deep faith our ancestors held in Buddhism. Today, visitors to Wat Yai often pause to admire its grace before paying homage to Phra Buddha Chinnarat in the hall in front."
         },
         "topics": [
           {
             "id": "significance",
             "title": "Significance & Sacred Days",
             "duration": "35 seconds",
-            "text": "Wat Prang Prathan is important evidence of the city plan and Buddhist prosperity of ancient Phitsanulok. It is now a registered archaeological monument used for historical and archaeological study, with no regular religious ceremonies.",
-            "audio_text": "Wat Prang Prathan is a registered archaeological monument, valued as evidence of the city plan and Buddhist prosperity of ancient Phitsanulok."
+            "text": "Phra Prang Prathan is the centre of Wat Phra Si Rattana Mahathat and enshrines relics of the Buddha. It is a place of worship, especially busy on Buddhist holy days and during the Phra Buddha Chinnarat homage fair.",
+            "audio_text": "Phra Prang Prathan is the centre of Wat Phra Si Rattana Mahathat and enshrines relics of the Buddha. It is a place of worship, especially busy on Buddhist holy days and during the Phra Buddha Chinnarat homage fair."
           },
           {
             "id": "beauty",
             "title": "Art & Beauty",
             "duration": "40 seconds",
-            "text": "Its highlight is the tall brick prang on a redented square base, with a niche in the relic chamber that once held a Buddha image. The tapering spire follows the early Ayutthaya style that evolved from Khmer prangs. Fragments of decorative stucco found in excavation show it was once richly ornamented.",
-            "audio_text": "The tall brick prang stands on a redented base with a tapering spire in the early Ayutthaya style, and was once decorated with moulded stucco."
+            "text": "The prang stands at the centre of the temple plan, surrounded by vihara halls on four sides and a double cloister. Its tall spire rises above the vihara roofs and can be seen from far along the Nan River.",
+            "audio_text": "The prang stands at the centre of the temple plan, surrounded by vihara halls on four sides and a double cloister. Its tall spire rises above the vihara roofs and can be seen from far along the Nan River."
           },
           {
             "id": "founding",
             "title": "Founding",
             "duration": "35 seconds",
-            "text": "From its architecture, Wat Prang Prathan is thought to have been built in the early Ayutthaya period, around the 15th century, when Phitsanulok was a royal city and co-capital of Ayutthaya. No document naming its builder or exact date has yet been found.",
-            "audio_text": "It is thought to date to the early Ayutthaya period, around the 15th century, when Phitsanulok was a co-capital of Ayutthaya; no record of its builder survives."
+            "text": "It was built together with Wat Phra Si Rattana Mahathat in the reign of King Maha Thammaracha I (Phaya Li Thai) of Sukhothai, and has been restored in several later periods.",
+            "audio_text": "It was built together with Wat Phra Si Rattana Mahathat in the reign of King Maha Thammaracha I (Phaya Li Thai) of Sukhothai, and has been restored in several later periods."
           },
           {
             "id": "history",
             "title": "History & Origins",
             "duration": "40 seconds",
-            "text": "The temple stands in the old city of Phitsanulok near the Chan Palace group of monuments. After the city's centre shifted and the temple was abandoned, the Fine Arts Department excavated and stabilised it and installed interpretive signage for visitors.",
-            "audio_text": "Set in the old city near Chan Palace, the temple was later abandoned; the Fine Arts Department has since excavated and conserved it as a learning site."
+            "text": "Wat Phra Si Rattana Mahathat stands on the east bank of the Nan River and has lasted more than six centuries. It is still an active temple and the spiritual heart of Phitsanulok.",
+            "audio_text": "Wat Phra Si Rattana Mahathat stands on the east bank of the Nan River and has lasted more than six centuries. It is still an active temple and the spiritual heart of Phitsanulok."
           }
         ]
       },
@@ -427,8 +443,10 @@
         "name": "Wat Wihan Thong",
         "short_name": "Wat Wihan Thong",
         "summary": "An archaeological site by the Nan River near Chan Palace; once home to a gilded walking Buddha.",
+        "sky_rotation": -73,
         "image_360": "img/pano/03.jpg",
         "thumbnail": "img/thumbs/03.jpg",
+        "audio": { "overview": "03_วัดวิหารทอง_ทั่วไป.mp3", "deep_dive": "03_วัดวิหารทอง_เจาะลึก.mp3" },
         "overview": {
           "title": "Overview",
           "duration": "55 seconds",
@@ -474,51 +492,53 @@
       },
       {
         "id": "naresuan_shrine",
-        "name": "Wat Si Sukhot",
-        "short_name": "Wat Si Sukhot",
-        "summary": "A monument in the Chan Palace group, with a bell-shaped stupa base and ruined hall foundations.",
+        "name": "Khun Phiren Thep Building",
+        "short_name": "Khun Phiren Thep Bldg",
+        "summary": "An old timber building in the Chan Palace grounds, once the Phitsanulok regional forestry office.",
+        "sky_rotation": -90,
         "image_360": "img/pano/04.jpg",
         "thumbnail": "img/thumbs/04.jpg",
+        "audio": { "overview": "04_อาคารขุนพิเรนทรเทพ_ทั่วไป.mp3", "deep_dive": "04_อาคารขุนพิเรนทรเทพ_เจาะลึก.mp3" },
         "overview": {
           "title": "Overview",
-          "duration": "40 seconds",
-          "text": "Wat Si Sukhot is an archaeological monument within the Chan Palace precinct, southwest of the palace. The remains of a brick stupa base and an assembly hall mark a religious site that stood alongside the old city of Phitsanulok.",
-          "audio_text": "Welcome to Wat Si Sukhot, an archaeological site southwest of Chan Palace."
+          "duration": "25 seconds",
+          "text": "Welcome to the Khun Phiren Thep Building, an old timber building within the grounds of Chan Palace. It was built in 1924 as the office of the Phitsanulok regional forestry service, and is now part of the Chan Palace Historical Centre. Khun Phiren Thep was the original title of King Maha Thammaracha, the father of King Naresuan the Great.",
+          "audio_text": "Welcome to the Khun Phiren Thep Building, an old timber building within the grounds of Chan Palace. It was built in 1924 as the office of the Phitsanulok regional forestry service, and is now part of the Chan Palace Historical Centre. Khun Phiren Thep was the original title of King Maha Thammaracha, the father of King Naresuan the Great."
         },
         "deep_dive": {
           "title": "Deep Dive",
-          "duration": "2 minutes",
-          "text": "Wat Si Sukhot lies within the Chan Palace group of monuments. Archaeological survey has revealed the base of a bell-shaped principal stupa and the foundations of an east-facing assembly hall. Finds include fragments of stucco Buddha images, roof tiles, and Ayutthaya-period ceramics, indicating that the temple remained in use from the Ayutthaya period into the early Rattanakosin era before being abandoned.",
-          "audio_text": "Survey work has uncovered a bell-shaped stupa base and an east-facing hall, along with Ayutthaya-period artefacts, showing that Wat Si Sukhot was in use for several centuries."
+          "duration": "35 seconds",
+          "text": "The Khun Phiren Thep Building was built in 1924 as the office of the Phitsanulok regional forestry service. It is made of hardwood and teak, with a hipped roof, a central staircase and a wing projecting on each side. Khun Phiren Thep was the original title of King Maha Thammaracha, ruler of Phitsanulok and father of King Naresuan the Great. The nearby Phra Sawatdirat Building bears the name of his mother, so together the two buildings recall the parents of King Naresuan, who was born here at Chan Palace.",
+          "audio_text": "The Khun Phiren Thep Building was built in 1924 as the office of the Phitsanulok regional forestry service. It is made of hardwood and teak, with a hipped roof, a central staircase and a wing projecting on each side. Khun Phiren Thep was the original title of King Maha Thammaracha, ruler of Phitsanulok and father of King Naresuan the Great. The nearby Phra Sawatdirat Building bears the name of his mother, so together the two buildings recall the parents of King Naresuan, who was born here at Chan Palace."
         },
         "topics": [
           {
             "id": "significance",
             "title": "Significance & Sacred Days",
             "duration": "35 seconds",
-            "text": "Wat Si Sukhot is part of the Chan Palace group of monuments and helps show the network of temples that once surrounded the palace. It is now a conservation area for study, with no regular ceremonies.",
-            "audio_text": "Wat Si Sukhot is part of the Chan Palace group of monuments, showing the network of temples that once surrounded the palace; it is now a conservation area for study."
+            "text": "The Khun Phiren Thep Building is part of the Chan Palace Historical Centre and one of the old timber buildings still standing in the palace grounds, alongside the Phra Sawatdirat Building.",
+            "audio_text": "The Khun Phiren Thep Building is part of the Chan Palace Historical Centre and one of the old timber buildings still standing in the palace grounds, alongside the Phra Sawatdirat Building."
           },
           {
             "id": "beauty",
             "title": "Art & Beauty",
             "duration": "35 seconds",
-            "text": "The remains are the base of a bell-shaped principal stupa and the foundations of an east-facing assembly hall. Placing the hall in front of the stupa is a common layout in Ayutthaya-period temples, giving a simple but well-proportioned local architecture.",
-            "audio_text": "The remains show a bell-shaped stupa base and an east-facing hall in front of it, a common Ayutthaya-period temple layout."
+            "text": "Built of hardwood and teak, with about 512 square metres of floor space, a hipped roof, a central staircase and a projecting wing on each side.",
+            "audio_text": "Built of hardwood and teak, with about 512 square metres of floor space, a hipped roof, a central staircase and a projecting wing on each side."
           },
           {
             "id": "founding",
             "title": "Founding",
             "duration": "30 seconds",
-            "text": "Finds such as ceramics and fragments of stucco Buddha images suggest Wat Si Sukhot was built and used in the Ayutthaya period, continuing into the early Rattanakosin era. No document names its builder or date.",
-            "audio_text": "Finds suggest it was built and used in the Ayutthaya period, continuing into early Rattanakosin times; no record of its builder survives."
+            "text": "Built in 1924 as the office of the Phitsanulok regional forestry service.",
+            "audio_text": "Built in 1924 as the office of the Phitsanulok regional forestry service."
           },
           {
             "id": "history",
             "title": "History & Origins",
             "duration": "35 seconds",
-            "text": "As the role of Chan Palace declined after the end of the Ayutthaya period, the surrounding temples including Wat Si Sukhot were abandoned. The Fine Arts Department later surveyed, excavated and registered it as a monument together with Chan Palace.",
-            "audio_text": "After the Ayutthaya period the temple was abandoned; the Fine Arts Department later excavated it and registered it as a monument with Chan Palace."
+            "text": "The building is named after the original title of King Maha Thammaracha, ruler of Phitsanulok and father of King Naresuan the Great. The nearby Phra Sawatdirat Building bears the name of King Naresuan's mother.",
+            "audio_text": "The building is named after the original title of King Maha Thammaracha, ruler of Phitsanulok and father of King Naresuan the Great. The nearby Phra Sawatdirat Building bears the name of King Naresuan's mother."
           }
         ]
       },
@@ -527,8 +547,10 @@
         "name": "King Naresuan the Great Shrine",
         "short_name": "Naresuan Shrine",
         "summary": "Birthplace of King Naresuan the Great and a spiritual centre for the people of Phitsanulok.",
+        "sky_rotation": -90,
         "image_360": "img/pano/05.jpg",
         "thumbnail": "img/thumbs/05.jpg",
+        "audio": { "overview": "05_ศาลพระนเรศวร_ทั่วไป.mp3", "deep_dive": "05_ศาลพระนเรศวร_เจาะลึก.mp3" },
         "overview": {
           "title": "Overview",
           "duration": "45 seconds",
@@ -577,8 +599,10 @@
         "name": "Phra Attharos Shrine",
         "short_name": "Phra Attharos",
         "summary": "A great standing Buddha about ten metres tall, revered alongside Phra Buddha Chinnarat.",
+        "sky_rotation": -90,
         "image_360": "img/pano/07.jpg",
         "thumbnail": "img/thumbs/07.jpg",
+        "audio": { "overview": "06_พระอัฏฐารส_ทั่วไป.mp3", "deep_dive": "06_พระอัฏฐารส_เจาะลึก.mp3" },
         "overview": {
           "title": "Overview",
           "duration": "50 seconds",
@@ -646,8 +670,10 @@
         "name": "成功佛殿",
         "short_name": "成功佛",
         "summary": "彭世洛府的神圣佛像，素可泰艺术杰作，供奉于难河之畔。",
+        "sky_rotation": -90,
         "image_360": "img/pano/01.jpg",
         "thumbnail": "img/thumbs/01.jpg",
+        "audio": { "overview": "01_พระพุทธชินราช_ทั่วไป.mp3", "deep_dive": "01_พระพุทธชินราช_เจาะลึก.mp3" },
         "overview": {
           "title": "概览",
           "duration": "50秒",
@@ -665,8 +691,8 @@
             "id": "significance",
             "title": "重要性与宗教节日",
             "duration": "45秒",
-            "text": "成功佛是彭世洛府最神圣的佛像，也是泰国最受尊崇的佛像之一。在摩诃菩萨日、卫塞节、三宝佛节等佛教节日，众多信众前来礼佛、绕佛，每年十一月前后还会举行成功佛庆典。",
-            "audio_text": "成功佛是彭世洛府最神圣的佛像。在重要佛教节日，众多信众前来礼佛，每年十一月前后举行庆典。"
+            "text": "成功佛是彭世洛府最神圣的佛像，也是泰国最受尊崇的佛像之一。在摩诃菩萨日、卫塞节、三宝佛节等佛教节日，众多信众前来礼佛、绕佛，每年万佛节（约二至三月）前后还会举行为期七天的成功佛庆典。",
+            "audio_text": "成功佛是彭世洛府最神圣的佛像。在重要佛教节日，众多信众前来礼佛，每年约二至三月举行庆典。"
           },
           {
             "id": "beauty",
@@ -693,51 +719,53 @@
       },
       {
         "id": "wat_pra_attharos",
-        "name": "主塔寺",
-        "short_name": "主塔寺",
-        "summary": "彭世洛古城的寺庙遗址，以一座高耸的砖砌主塔为中心。",
+        "name": "大舍利寺主塔",
+        "short_name": "主塔",
+        "summary": "大舍利寺中心的主塔，供奉佛陀舍利。",
+        "sky_rotation": -90,
         "image_360": "img/pano/02.jpg",
         "thumbnail": "img/thumbs/02.jpg",
+        "audio": { "overview": "02_พระปรางค์ประธาน_ทั่วไป.mp3", "deep_dive": "02_พระปรางค์ประธาน_เจาะลึก.mp3" },
         "overview": {
           "title": "概览",
-          "duration": "45秒",
-          "text": "主塔寺是彭世洛古城内的考古遗址，以一座高耸的高棉式主塔为中心，融合了高棉与大城早期艺术风格以及当地工匠技艺。",
-          "audio_text": "欢迎来到主塔寺，这座遗址以彭世洛古城内一座高耸的中央佛塔为中心。"
+          "duration": "50秒",
+          "text": "欢迎来到大舍利寺主塔。主塔位于大舍利寺的中心，与寺院同时建造，距今已有六百多年。塔内供奉佛陀舍利，四方环绕佛殿，是体现“双河之地”彭世洛佛教兴盛的建筑杰作。",
+          "audio_text": "欢迎来到大舍利寺主塔。主塔位于大舍利寺的中心，与寺院同时建造，距今已有六百多年。塔内供奉佛陀舍利，四方环绕佛殿，是体现“双河之地”彭世洛佛教兴盛的建筑杰作。"
         },
         "deep_dive": {
           "title": "深入了解",
-          "duration": "2分15秒",
-          "text": "寺庙的主塔以砖块和灰泥砌筑，建于折角方形台基之上，有台阶通往原本供奉佛像的塔室。其建筑风格显示建于大城早期，约公元15世纪，当时彭世洛是大城王朝的陪都与王城。考古发掘出土了大量灰泥装饰残件与陶片。",
-          "audio_text": "主塔以砖块和灰泥砌筑，立于折角方形台基上，据信建于大城早期，当时彭世洛是王朝的陪都。"
+          "duration": "2分40秒",
+          "text": "素可泰国王摩诃达摩罗阇一世（立泰王）在难河东岸建造大舍利寺时，依照古老的信仰规划寺院，将主塔置于正中，用以供奉佛陀舍利，象征三界经宇宙观中的宇宙中轴。四座佛殿分列四方：西面为成功佛殿，东面为阿他罗立佛殿，北面为钦纳西佛殿，南面为西萨斯达佛殿，外围环绕两重回廊。六百多年过去，主塔依然屹立，是彭世洛的象征，高耸于难河沿岸的天际线上，提醒人们先民对佛教的虔诚信仰。如今来到大寺的游客，常会驻足欣赏主塔的雄姿，再前往前方佛殿礼拜成功佛。",
+          "audio_text": "素可泰国王摩诃达摩罗阇一世（立泰王）在难河东岸建造大舍利寺时，依照古老的信仰规划寺院，将主塔置于正中，用以供奉佛陀舍利，象征三界经宇宙观中的宇宙中轴。四座佛殿分列四方：西面为成功佛殿，东面为阿他罗立佛殿，北面为钦纳西佛殿，南面为西萨斯达佛殿，外围环绕两重回廊。六百多年过去，主塔依然屹立，是彭世洛的象征，高耸于难河沿岸的天际线上，提醒人们先民对佛教的虔诚信仰。如今来到大寺的游客，常会驻足欣赏主塔的雄姿，再前往前方佛殿礼拜成功佛。"
         },
         "topics": [
           {
             "id": "significance",
             "title": "重要性与宗教节日",
             "duration": "35秒",
-            "text": "主塔寺是研究彭世洛古城布局与佛教兴盛的重要实证，现为登记在册的考古遗迹，用于历史与考古教学，不再举行固定的宗教活动。",
-            "audio_text": "主塔寺是登记在册的考古遗迹，作为彭世洛古城布局与佛教兴盛的重要实证。"
+            "text": "主塔是大舍利寺的中心，供奉佛陀舍利，是信众礼拜之地，在佛教节日和成功佛庆典期间尤为热闹。",
+            "audio_text": "主塔是大舍利寺的中心，供奉佛陀舍利，是信众礼拜之地，在佛教节日和成功佛庆典期间尤为热闹。"
           },
           {
             "id": "beauty",
             "title": "艺术与美学",
             "duration": "40秒",
-            "text": "亮点是高耸的砖砌主塔，立于折角方形台基之上，塔身设有龛室，原本供奉佛像。塔尖向上收分，属于由高棉塔演变而来的大城早期风格。发掘出土的灰泥装饰残件表明其曾装饰华丽。",
-            "audio_text": "高耸的砖砌主塔立于折角台基之上，塔尖收分，属大城早期风格，曾以灰泥纹饰装饰。"
+            "text": "主塔位于寺院布局的正中，四面环绕佛殿与两重回廊。高耸的塔尖超出佛殿屋顶，从难河沿岸远处即可望见。",
+            "audio_text": "主塔位于寺院布局的正中，四面环绕佛殿与两重回廊。高耸的塔尖超出佛殿屋顶，从难河沿岸远处即可望见。"
           },
           {
             "id": "founding",
             "title": "创建",
             "duration": "35秒",
-            "text": "从建筑风格判断，主塔寺应建于大城早期，约公元15世纪，当时彭世洛是大城王朝的王城与陪都。目前尚未发现记载创建者与确切年代的文献。",
-            "audio_text": "据建筑风格判断应建于大城早期、约公元15世纪，当时彭世洛是大城陪都；尚无创建者记载。"
+            "text": "主塔与大舍利寺同时建于素可泰王朝摩诃达摩罗阇一世（立泰王）在位期间，后世曾多次修缮。",
+            "audio_text": "主塔与大舍利寺同时建于素可泰王朝摩诃达摩罗阇一世（立泰王）在位期间，后世曾多次修缮。"
           },
           {
             "id": "history",
             "title": "历史与由来",
             "duration": "40秒",
-            "text": "主塔寺位于彭世洛古城内，邻近占王宫遗址群。城市中心迁移、寺庙荒废后，泰国艺术部对其进行了发掘与加固，并设立说明牌供访客了解。",
-            "audio_text": "主塔寺位于彭世洛古城、邻近占王宫，后遭荒废；泰国艺术部已对其发掘加固，作为学习场所。"
+            "text": "大舍利寺位于难河东岸，已历经六百多年，至今仍是举行宗教活动的寺院，也是彭世洛人的精神中心。",
+            "audio_text": "大舍利寺位于难河东岸，已历经六百多年，至今仍是举行宗教活动的寺院，也是彭世洛人的精神中心。"
           }
         ]
       },
@@ -746,8 +774,10 @@
         "name": "金殿寺",
         "short_name": "金殿寺",
         "summary": "难河畔、邻近占王宫的考古遗址，原供奉一尊贴金行走佛像。",
+        "sky_rotation": -73,
         "image_360": "img/pano/03.jpg",
         "thumbnail": "img/thumbs/03.jpg",
+        "audio": { "overview": "03_วัดวิหารทอง_ทั่วไป.mp3", "deep_dive": "03_วัดวิหารทอง_เจาะลึก.mp3" },
         "overview": {
           "title": "概览",
           "duration": "55秒",
@@ -793,51 +823,53 @@
       },
       {
         "id": "naresuan_shrine",
-        "name": "西素科寺",
-        "short_name": "西素科寺",
-        "summary": "占王宫遗址群中的古迹，现存钟形佛塔基座与佛殿地基。",
+        "name": "坤披伦贴楼",
+        "short_name": "坤披伦贴楼",
+        "summary": "占王宫范围内的老木楼，曾是彭世洛区域林业办公室。",
+        "sky_rotation": -90,
         "image_360": "img/pano/04.jpg",
         "thumbnail": "img/thumbs/04.jpg",
+        "audio": { "overview": "04_อาคารขุนพิเรนทรเทพ_ทั่วไป.mp3", "deep_dive": "04_อาคารขุนพิเรนทรเทพ_เจาะลึก.mp3" },
         "overview": {
           "title": "概览",
-          "duration": "40秒",
-          "text": "西素科寺是占王宫范围内的考古遗迹，位于王宫西南侧。现存砖砌佛塔基座与佛殿遗迹，是与彭世洛古城相伴而立的宗教场所。",
-          "audio_text": "欢迎来到西素科寺，这是占王宫西南侧的一处考古遗址。"
+          "duration": "25秒",
+          "text": "欢迎来到坤披伦贴楼。这是占王宫范围内的一座老木楼，建于公元1924年，原为彭世洛区域林业办公室，现为占王宫历史中心的一部分。“坤披伦贴”是摩诃达摩罗阇王的原称号，他是纳黎萱大帝的父亲。",
+          "audio_text": "欢迎来到坤披伦贴楼。这是占王宫范围内的一座老木楼，建于公元1924年，原为彭世洛区域林业办公室，现为占王宫历史中心的一部分。“坤披伦贴”是摩诃达摩罗阇王的原称号，他是纳黎萱大帝的父亲。"
         },
         "deep_dive": {
           "title": "深入了解",
-          "duration": "2分钟",
-          "text": "西素科寺属于占王宫遗址群。考古调查发现了钟形主佛塔的基座，以及一座朝东的佛殿地基。出土文物包括灰泥佛像残件、屋瓦及大城时期陶瓷，表明该寺自大城时期一直沿用至拉达那哥欣早期，之后被废弃。",
-          "audio_text": "调查发现钟形佛塔基座与朝东的佛殿地基，以及大城时期文物，说明西素科寺沿用了数百年。"
+          "duration": "1分20秒",
+          "text": "坤披伦贴楼建于公元1924年，原为彭世洛区域林业办公室。楼体以硬木和柚木建成，使用面积约512平方米，采用四坡屋顶，正中设楼梯，两侧各有伸出的翼楼。附近是较早于1913年建成的帕沙瓦迪拉楼，原为林业官员的住所。这两座木楼记录了占王宫一带在后世的使用情况。“坤披伦贴”是摩诃达摩罗阇王的原称号。公元1548年，坤披伦贴与同党除去坤沃拉翁沙提拉，拥立天拉差王子登基，即摩诃查克拉帕王。坤披伦贴因此受封为摩诃达摩罗阇，治理彭世洛，并迎娶摩诃查克拉帕王与素丽瑶泰王后之女帕沙瓦迪拉公主。他们的子女有素攀甘拉亚公主、纳黎萱大帝和厄卡陀沙律王。因此，这两座楼的名字令人想起纳黎萱大帝的父亲与母亲，而纳黎萱大帝正是诞生于这座占王宫。",
+          "audio_text": "坤披伦贴楼建于公元1924年，原为彭世洛区域林业办公室。楼体以硬木和柚木建成，使用面积约512平方米，采用四坡屋顶，正中设楼梯，两侧各有伸出的翼楼。附近是较早于1913年建成的帕沙瓦迪拉楼，原为林业官员的住所。这两座木楼记录了占王宫一带在后世的使用情况。“坤披伦贴”是摩诃达摩罗阇王的原称号。公元1548年，坤披伦贴与同党除去坤沃拉翁沙提拉，拥立天拉差王子登基，即摩诃查克拉帕王。坤披伦贴因此受封为摩诃达摩罗阇，治理彭世洛，并迎娶摩诃查克拉帕王与素丽瑶泰王后之女帕沙瓦迪拉公主。他们的子女有素攀甘拉亚公主、纳黎萱大帝和厄卡陀沙律王。因此，这两座楼的名字令人想起纳黎萱大帝的父亲与母亲，而纳黎萱大帝正是诞生于这座占王宫。"
         },
         "topics": [
           {
             "id": "significance",
             "title": "重要性与宗教节日",
             "duration": "35秒",
-            "text": "西素科寺是占王宫遗址群的一部分，有助于呈现昔日环绕王宫的寺院网络。如今为供研究的保护区，不再举行固定的宗教活动。",
-            "audio_text": "西素科寺是占王宫遗址群的一部分，呈现了昔日环绕王宫的寺院网络，如今为供研究的保护区。"
+            "text": "坤披伦贴楼是占王宫历史中心的一部分，与帕沙瓦迪拉楼一样，是占王宫范围内保存至今的老木楼。",
+            "audio_text": "坤披伦贴楼是占王宫历史中心的一部分，与帕沙瓦迪拉楼一样，是占王宫范围内保存至今的老木楼。"
           },
           {
             "id": "beauty",
             "title": "艺术与美学",
             "duration": "35秒",
-            "text": "遗存为一座钟形主佛塔的基座，以及一座朝东的佛殿地基。佛殿位于佛塔之前的布局，是大城时期寺院常见的形制，展现出朴素而比例得当的地方建筑。",
-            "audio_text": "遗存包括钟形佛塔基座与其前方朝东的佛殿地基，属大城时期寺院常见布局。"
+            "text": "以硬木和柚木建成，使用面积约512平方米，四坡屋顶，正中设楼梯，两侧各有翼楼。",
+            "audio_text": "以硬木和柚木建成，使用面积约512平方米，四坡屋顶，正中设楼梯，两侧各有翼楼。"
           },
           {
             "id": "founding",
             "title": "创建",
             "duration": "30秒",
-            "text": "出土的陶瓷与灰泥佛像残件等文物，表明西素科寺应在大城时期建造并使用，并延续至拉达那哥欣早期。目前尚无记载创建者与年代的文献。",
-            "audio_text": "出土文物表明它在大城时期建造使用，并延续至拉达那哥欣早期；尚无创建者记载。"
+            "text": "建于公元1924年，原为彭世洛区域林业办公室。",
+            "audio_text": "建于公元1924年，原为彭世洛区域林业办公室。"
           },
           {
             "id": "history",
             "title": "历史与由来",
             "duration": "35秒",
-            "text": "大城时期结束、占王宫地位下降后，包括西素科寺在内的周边寺庙相继荒废。泰国艺术部后来对其进行了调查、发掘，并与占王宫一同登记为古迹。",
-            "audio_text": "大城时期结束后西素科寺荒废，泰国艺术部后来将其发掘并与占王宫一同登记为古迹。"
+            "text": "楼名来自摩诃达摩罗阇王的原称号，他治理彭世洛，是纳黎萱大帝的父亲；附近的帕沙瓦迪拉楼则以纳黎萱大帝的母亲命名。",
+            "audio_text": "楼名来自摩诃达摩罗阇王的原称号，他治理彭世洛，是纳黎萱大帝的父亲；附近的帕沙瓦迪拉楼则以纳黎萱大帝的母亲命名。"
           }
         ]
       },
@@ -846,8 +878,10 @@
         "name": "纳黎萱大帝纪念祠",
         "short_name": "纳黎萱纪念祠",
         "summary": "纳黎萱大帝的诞生地，也是彭世洛民众的精神中心。",
+        "sky_rotation": -90,
         "image_360": "img/pano/05.jpg",
         "thumbnail": "img/thumbs/05.jpg",
+        "audio": { "overview": "05_ศาลพระนเรศวร_ทั่วไป.mp3", "deep_dive": "05_ศาลพระนเรศวร_เจาะลึก.mp3" },
         "overview": {
           "title": "概览",
           "duration": "45秒",
@@ -896,8 +930,10 @@
         "name": "帕阿他罗立佛殿",
         "short_name": "帕阿他罗立佛",
         "summary": "一尊约十米高的大型立佛，与成功佛一同受人敬仰。",
+        "sky_rotation": -90,
         "image_360": "img/pano/07.jpg",
         "thumbnail": "img/thumbs/07.jpg",
+        "audio": { "overview": "06_พระอัฏฐารส_ทั่วไป.mp3", "deep_dive": "06_พระอัฏฐารส_เจาะลึก.mp3" },
         "overview": {
           "title": "概览",
           "duration": "50秒",
@@ -976,6 +1012,7 @@
         "busy_note": "ประมาณการจากวันและเวลา ไม่ใช่ข้อมูลเรียลไทม์",
         "busy_note_google": "ที่มา: ช่วงเวลายอดนิยมจาก Google Maps (ค่าเฉลี่ยย้อนหลัง ไม่ใช่เรียลไทม์)",
         "popular_title": "ช่วงเวลายอดนิยม",
+        "closed_day": "ปิดทำการวันนี้",
         "day_short": ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส"],
         "now": "ตอนนี้",
         "map_river": "แม่น้ำน่าน",
@@ -1002,6 +1039,7 @@
         "busy_note": "Estimated from day and time — not live data",
         "busy_note_google": "Source: Google Maps popular times (historical average, not live)",
         "popular_title": "Popular times",
+        "closed_day": "Closed on this day",
         "day_short": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
         "now": "Now",
         "map_river": "Nan River",
@@ -1028,6 +1066,7 @@
         "busy_note": "根据星期与时间估算，非实时数据",
         "busy_note_google": "来源：Google 地图热门时段（历史平均，非实时）",
         "popular_title": "热门时段",
+        "closed_day": "当日闭馆",
         "day_short": ["日", "一", "二", "三", "四", "五", "六"],
         "now": "现在",
         "map_river": "难河",
@@ -1053,8 +1092,8 @@
         ]
       },
       "wat_pra_attharos": {
-        "open": { "from": 7, "to": 17, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 0.7 },
-        "hours": { "th": "เปิดให้เข้าชมทุกวัน 07.00–17.00 น.", "en": "Daily 07:00–17:00", "zh": "每日 07:00–17:00" },
+        "open": { "from": 6, "to": 20, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 0.7 },
+        "hours": { "th": "ทุกวัน 06.00–20.00 น. (ตามเวลาเปิดวัดพระศรีรัตนมหาธาตุ)", "en": "Daily 06:00–20:00 (Wat Phra Si Rattana Mahathat opening hours)", "zh": "每日 06:00–20:00（与大舍利寺开放时间相同）" },
         "closed": { "th": "ไม่มีวันหยุด", "en": "Open every day", "zh": "全年开放" },
         "events": [
           { "name": { "th": "ช่วงวันสำคัญ", "en": "Peak days", "zh": "旺季" },
@@ -1071,9 +1110,9 @@
         ]
       },
       "naresuan_shrine": {
-        "open": { "from": 8, "to": 18, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 0.35 },
-        "hours": { "th": "เข้าชมได้ทุกวันช่วงกลางวัน (โบราณสถานในเขตพระราชวังจันทน์)", "en": "Daylight hours daily (within the Chan Palace grounds)", "zh": "每日白天开放（占王宫范围内）" },
-        "closed": { "th": "ไม่มีวันหยุด", "en": "Open every day", "zh": "全年开放" },
+        "open": { "from": 9, "to": 16, "days": [0, 2, 3, 4, 5, 6], "crowd": 0.35 },
+        "hours": { "th": "วันอังคาร–วันอาทิตย์ 09.00–16.00 น.", "en": "Tuesday–Sunday 09:00–16:00", "zh": "周二至周日 09:00–16:00" },
+        "closed": { "th": "วันจันทร์", "en": "Mondays", "zh": "周一" },
         "events": [
           { "name": { "th": "กิจกรรมศูนย์ประวัติศาสตร์", "en": "Historical centre activities", "zh": "历史中心活动" },
             "when": { "th": "ร่วมกิจกรรมกับศูนย์ประวัติศาสตร์พระราชวังจันทน์ โดยเฉพาะช่วงงานแผ่นดินฯ (ปลายมกราคม)", "en": "Shares the Chan Palace Historical Centre programme, notably during the King Naresuan Fair (late January)", "zh": "与占王宫历史中心活动相连，尤其在纳黎萱大帝庆典期间（1月下旬）" } }
@@ -1099,6 +1138,142 @@
             "when": { "th": "มีผู้มาสักการะปิดทองมากในวันมาฆบูชา วิสาขบูชา อาสาฬหบูชา และวันพระ", "en": "Busy with gold-leaf offerings on Makha, Visakha, Asalha Bucha and weekly holy days", "zh": "摩诃、卫塞、三宝佛节及每周佛日贴金信众众多" } }
         ]
       }
+    }
+  },
+  "guide": {
+    "th": {
+      "name": "น้องคชา · ช้างศึกน้อย",
+      "hint": "แตะน้องคชาเพื่อฟังเกร็ดความรู้",
+      "greet": "สวัสดีครับ! ผมชื่อน้องคชา ช้างศึกน้อยแห่งเมืองพิษณุโลก วันนี้ผมจะพาเที่ยว{name}เองครับ 🐘",
+      "arrive": [
+        "ตู้ดดด~ มาถึง{name}แล้ว! ลองลากหน้าจอหมุนดูรอบ ๆ นะครับ",
+        "ถึงแล้วครับ {name}! กดฟังเสียงบรรยายไปพร้อมกับผมนะ",
+        "ว้าว {name} สวยมากเลย! มองให้ครบทุกมุมนะครับ"
+      ],
+      "back": ["ผมกลับมาแล้วครับ! 🐘", "คิดถึงผมเหรอครับ? ไปเที่ยวต่อกัน!"],
+      "talking": "ฟังเพลิน ๆ นะครับ ♪",
+      "tips": [
+        "ลากหน้าจอเพื่อหมุนดูรอบทิศ 360 องศาได้เลยครับ",
+        "อยากรู้ลึกกว่านี้? ลองกดแท็บ “ระดับข้อมูลเจาะลึก” ดูนะครับ",
+        "แตะหมุดบนแผนผังด้านซ้าย เพื่อดูทางเดินไปจุดต่อไปครับ",
+        "รู้ไหมครับ? สมเด็จพระนเรศวรทรงชนะศึกยุทธหัตถีบนหลังช้างทรง “เจ้าพระยาไชยานุภาพ”",
+        "รู้ไหมครับ? พระราชวังจันทน์คือสถานที่ประสูติของสมเด็จพระนเรศวรมหาราช",
+        "รู้ไหมครับ? พระพุทธชินราชได้รับการยกย่องว่างดงามที่สุดองค์หนึ่งของไทย",
+        "รู้ไหมครับ? ช้างเป็นสัตว์สัญลักษณ์ของชาติไทย และวันช้างไทยตรงกับวันที่ 13 มีนาคม",
+        "ถ้าไปวัดจริง อย่าลืมแต่งกายสุภาพนะครับ 🙏"
+      ],
+      "hide": "ซ่อนน้องคชา",
+      "show": "เรียกน้องคชา"
+    },
+    "en": {
+      "name": "Kacha · the little war elephant",
+      "hint": "Tap Kacha for a fun fact",
+      "greet": "Hello! I'm Kacha, the little war elephant of Phitsanulok. Let me show you around {name}! 🐘",
+      "arrive": [
+        "Toot-toot! We've reached {name}. Drag the screen to look all around!",
+        "Here we are at {name}! Press play and listen along with me.",
+        "Wow, {name} is beautiful! Take a look in every direction."
+      ],
+      "back": ["I'm back! 🐘", "Missed me? Let's keep exploring!"],
+      "talking": "Enjoy the story ♪",
+      "tips": [
+        "Drag the screen to look around in full 360°.",
+        "Want more? Try the “Deep dive” tab.",
+        "Tap a marker on the map at the left to see the way to the next site.",
+        "Did you know? King Naresuan won his famous elephant duel riding Chao Phraya Chaiyanuphap.",
+        "Did you know? Chan Palace is where King Naresuan the Great was born.",
+        "Did you know? Phra Buddha Chinnarat is considered one of the most beautiful Buddha images in Thailand.",
+        "Did you know? The elephant is Thailand's national animal, and Thai Elephant Day is 13 March.",
+        "When you visit a real temple, please dress modestly 🙏"
+      ],
+      "hide": "Hide Kacha",
+      "show": "Call Kacha back"
+    },
+    "zh": {
+      "name": "小象卡查 · 小战象",
+      "hint": "点一点卡查，听趣味知识",
+      "greet": "你好！我是彭世洛的小战象卡查，今天由我带你参观{name}！🐘",
+      "arrive": [
+        "嘟嘟～到{name}啦！拖动屏幕看看四周吧！",
+        "我们到{name}了！点播放，和我一起听讲解吧。",
+        "哇，{name}好美！每个角度都看看吧。"
+      ],
+      "back": ["我回来啦！🐘", "想我了吗？继续参观吧！"],
+      "talking": "慢慢听哦 ♪",
+      "tips": [
+        "拖动屏幕即可 360° 环顾四周。",
+        "想了解更多？试试“深入”标签。",
+        "点击左侧地图上的标记，查看前往下一个地点的路线。",
+        "你知道吗？纳黎萱王骑着战象“昭帕耶猜亚努帕”赢得了著名的象战。",
+        "你知道吗？占王宫是纳黎萱大帝的出生地。",
+        "你知道吗？成功佛被誉为泰国最美的佛像之一。",
+        "你知道吗？大象是泰国的国兽，泰国大象日是 3 月 13 日。",
+        "参观真实寺庙时，请穿着得体 🙏"
+      ],
+      "hide": "隐藏卡查",
+      "show": "叫回卡查"
+    }
+  },
+  "guide_eval": {
+    "th": {
+      "name": "น้องคชา · ช้างศึกน้อย",
+      "hint": "แตะน้องคชาเพื่อดูคำแนะนำ",
+      "greet": "สวัสดีครับ! ผมน้องคชาเองครับ 🐘 ช่วยประเมินระบบนำชมให้ผมหน่อยนะครับ ใช้เวลาเพียงไม่กี่นาที",
+      "progress": "ตอบแล้ว {n}/{total}",
+      "dim_done": "เยี่ยมเลยครับ! ครบด้านที่ {d} แล้ว เหลืออีก {left} ด้าน",
+      "all_done": "ครบทุกข้อแล้วครับ! 🎉 เขียนข้อเสนอแนะเพิ่มได้ แล้วกด “ส่งแบบประเมิน” เลยครับ",
+      "missing": "ยังเหลืออีก {n} ข้อนะครับ ช่วยให้คะแนนให้ครบก่อนส่งนะ",
+      "thanks": "ขอบคุณมาก ๆ ครับ 🙏 ทุกความคิดเห็นช่วยพัฒนาระบบนำชมมรดกพิษณุโลกได้จริง ๆ",
+      "results": "นี่คือผลการประเมินรวมจากผู้ใช้ทุกคนครับ 📊",
+      "back": ["ผมกลับมาแล้วครับ! 🐘"],
+      "tips": [
+        "ตอบตามความรู้สึกจริงได้เลยนะครับ ทุกคำตอบมีค่าเท่ากัน",
+        "แตะดาวเพื่อให้คะแนน 1 ถึง 5 ครับ",
+        "ช่องข้อเสนอแนะด้านล่างก็สำคัญมากนะครับ ✍️",
+        "ผมจะคอยนับให้ว่าตอบไปกี่ข้อแล้ว ดูได้ที่ป้ายใต้ตัวผมครับ"
+      ],
+      "hide": "ซ่อนน้องคชา",
+      "show": "เรียกน้องคชา"
+    },
+    "en": {
+      "name": "Kacha · the little war elephant",
+      "hint": "Tap Kacha for help",
+      "greet": "Hello, it's Kacha again! 🐘 Could you rate the virtual tour for me? It only takes a few minutes.",
+      "progress": "Answered {n}/{total}",
+      "dim_done": "Great! Section {d} is done, {left} to go.",
+      "all_done": "All questions answered! 🎉 Add any comments, then press submit.",
+      "missing": "{n} questions still need an answer before you can submit.",
+      "thanks": "Thank you so much! 🙏 Every response helps improve the Phitsanulok heritage tour.",
+      "results": "Here are the combined results from everyone 📊",
+      "back": ["I'm back! 🐘"],
+      "tips": [
+        "Answer honestly: every answer counts the same.",
+        "Tap the stars to give a score from 1 to 5.",
+        "The comments box at the bottom matters a lot too ✍️",
+        "I'm counting your answers: check the badge under me."
+      ],
+      "hide": "Hide Kacha",
+      "show": "Call Kacha back"
+    },
+    "zh": {
+      "name": "小象卡查 · 小战象",
+      "hint": "点一点卡查查看提示",
+      "greet": "你好，我是卡查！🐘 请帮我评价这个虚拟导览吧，只需几分钟。",
+      "progress": "已答 {n}/{total}",
+      "dim_done": "太棒了！第 {d} 部分完成，还剩 {left} 部分。",
+      "all_done": "全部答完啦！🎉 可以写下建议，然后点击提交。",
+      "missing": "还有 {n} 题未作答，请答完再提交。",
+      "thanks": "非常感谢！🙏 每一份意见都能帮助改进彭世洛文化遗产导览。",
+      "results": "这是所有用户的综合评价结果 📊",
+      "back": ["我回来啦！🐘"],
+      "tips": [
+        "请按真实感受作答，每个答案同样重要。",
+        "点击星星给出 1 到 5 分。",
+        "下方的建议栏也很重要哦 ✍️",
+        "我会帮你计数，看看我下方的标签。"
+      ],
+      "hide": "隐藏卡查",
+      "show": "叫回卡查"
     }
   },
   "evaluation": {

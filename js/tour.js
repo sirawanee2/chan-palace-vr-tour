@@ -15,7 +15,7 @@ const SITE_MAP = {
         chan_palace_site:          { x: 65,  y: 135 },
         wat_phra_buddha_chinnarat: { x: 210, y: 130 },
         folk_museum:               { x: 255, y: 190 },
-        naresuan_shrine:           { x: 80,  y: 250 }
+        naresuan_shrine:           { x: 85,  y: 235 }   // อาคารขุนพิเรนทรเทพ, inside Chan Palace
     },
     edges: [
         ['wat_phra_buddha_chinnarat', 'wat_pra_attharos', 70],
@@ -23,7 +23,7 @@ const SITE_MAP = {
         ['wat_pra_attharos', 'folk_museum', 120],
         ['wat_phra_buddha_chinnarat', 'chan_palace_site', 1300],
         ['chan_palace_site', 'national_museum', 400],
-        ['chan_palace_site', 'naresuan_shrine', 420]
+        ['chan_palace_site', 'naresuan_shrine', 150]
     ],
     // Nan River band, in the same 300x285 canvas
     river: 'M150 -5 C 165 70, 138 150, 156 210 L 170 290 L 190 290 C 172 205, 196 125, 172 60 L 165 -5 Z'
@@ -67,6 +67,7 @@ class TourController {
         this.setupSitePanel();
         this.setupUI();
         this.setupSpeech();
+        if (window.ElephantGuide) this.guide = new ElephantGuide(this);
         this.loadLocation(this.currentLocationId);
     }
 
@@ -113,7 +114,7 @@ class TourController {
 
     setupUI() {
         // Back button
-        const backBtn = document.querySelector('.tour-back');
+        const backBtn = document.querySelector('a.tour-back');
         if (backBtn) {
             backBtn.href = `index.html?lang=${this.currentLang}`;
         }
@@ -202,6 +203,7 @@ class TourController {
 
     setSpeakingUI(on) {
         this.isSpeaking = on;
+        this.guide?.setTalking(on);
         const btn = document.querySelector('.btn-speak');
         if (!btn) return;
         btn.classList.toggle('speaking', on);
@@ -237,7 +239,11 @@ class TourController {
         // plain dark sky.
         const sky = document.querySelector('#vr-sky');
         const flat = document.querySelector('#flat-photo');
-        const src = location.image_360;
+        // Desktop GPUs get the full-resolution panorama from img/pano_hd/;
+        // phones keep the 4096px version (many can't load wider textures).
+        const sdSrc = location.image_360;
+        const hdSrc = sdSrc && sdSrc.includes('/pano/') ? sdSrc.replace('/pano/', '/pano_hd/') : null;
+        let src = (hdSrc && this.canUseHD()) ? hdSrc : sdSrc;
         if (sky) sky.removeAttribute('animation');
 
         const probe = new Image();
@@ -249,6 +255,9 @@ class TourController {
 
             if (sky) {
                 sky.setAttribute('material', 'opacity', 1);
+                // Optional per-scene turn so the visitor starts facing the
+                // main subject (degrees; content.json "sky_rotation")
+                sky.setAttribute('rotation', `0 ${location.sky_rotation || 0} 0`);
                 if (isPano) {
                     sky.setAttribute('material', 'src', src);
                     sky.setAttribute('material', 'color', '#ffffff');
@@ -271,6 +280,12 @@ class TourController {
             this.hideLoadingScreen();
         };
         probe.onerror = () => {
+            // No HD file for this scene: fall back to the regular panorama
+            if (src === hdSrc && sdSrc) {
+                src = sdSrc;
+                probe.src = src;
+                return;
+            }
             if (sky) sky.setAttribute('material', 'src', src);
             this.hideLoadingScreen();
         };
@@ -302,6 +317,7 @@ class TourController {
         this.routeDest = null;
         this.busyDay = null;
         this.renderSitePanel(location);
+        this.guide?.arrive(location);
 
         // Auto-play the brief overview narration on arrival. This is not a
         // direct user click, so browsers may block it (no prior interaction
@@ -457,8 +473,12 @@ class TourController {
             </button>`
         ).join('');
 
+        // Selected weekday is a closing day (e.g. Mondays): no bars
+        const openDays = (this.placeInfo(location).open || {}).days;
+        const closedDay = Array.isArray(openDays) && !openDays.includes(day);
+
         let google = false;
-        const bars = this.chartHours(location).map(h => {
+        const bars = closedDay ? `<p class="pt-closed">${L.closed_day || ''}</p>` : this.chartHours(location).map(h => {
             const p = this.popularAt(location, day, h);
             google = google || p.google;
             const isNow = day === today && h === now.getHours();
@@ -741,11 +761,57 @@ class TourController {
         const duration = document.querySelector('.duration-badge span');
         if (duration) duration.textContent = layer.duration;
 
+        // Replace the hand-typed duration with the narration file's real
+        // length, so the badge stays right whenever the audio is re-recorded
+        const audioPath = this.audioPathFor(location, this.currentLayer);
+        this._durationKey = audioPath;
+        const probe = new Audio();
+        probe.preload = 'metadata';
+        probe.addEventListener('loadedmetadata', () => {
+            if (this._durationKey !== audioPath || !isFinite(probe.duration) || !duration) return;
+            duration.textContent = this.formatDuration(probe.duration);
+        });
+        probe.src = audioPath;
+
         // Update tab labels
         const data = this.content[this.currentLang];
         const tabs = document.querySelectorAll('.info-tab');
         if (tabs[0]) tabs[0].textContent = data.ui.overview;
         if (tabs[1]) tabs[1].textContent = data.ui.deep_dive;
+    }
+
+    // Full-resolution panoramas only on desktop-class GPUs (texture limit
+    // of 8192px or more); phones and tablets stay on the 4096px version.
+    canUseHD() {
+        if (this._canUseHD !== undefined) return this._canUseHD;
+        let ok = false;
+        try {
+            if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+                const gl = document.createElement('canvas').getContext('webgl');
+                ok = !!gl && gl.getParameter(gl.MAX_TEXTURE_SIZE) >= 8192;
+            }
+        } catch (e) { ok = false; }
+        this._canUseHD = ok;
+        return ok;
+    }
+
+    // Narration file for a location/layer. A location may name its own files
+    // in content.json ("audio": { "overview": "...", "deep_dive": "..." },
+    // relative to audio/<lang>/); otherwise the default <id>_<layer>.mp3.
+    audioPathFor(location, layer) {
+        const file = (location.audio && location.audio[layer]) || `${location.id}_${layer}.mp3`;
+        return `audio/${this.currentLang}/${file}`;
+    }
+
+    formatDuration(seconds) {
+        const s = Math.max(1, Math.round(seconds));
+        const m = Math.floor(s / 60), r = s % 60;
+        const f = {
+            th: [`${r} วินาที`, `${m} นาที`, `${m} นาที ${r} วินาที`],
+            en: [`${r} sec`, `${m} min`, `${m} min ${r} sec`],
+            zh: [`${r}秒`, `${m}分钟`, `${m}分${r}秒`]
+        }[this.currentLang] || [];
+        return m === 0 ? f[0] : (r === 0 ? f[1] : f[2]);
     }
 
     switchLayer(layer) {
@@ -779,7 +845,7 @@ class TourController {
         //   audio/<lang>/<locationId>_<layer>.mp3
         // (th = Microsoft Edge "Premwadee" neural voice; en/zh = Sia AI.)
         // If the file is missing, we fall back to the browser's speech engine.
-        const audioPath = `audio/${this.currentLang}/${this.currentLocationId}_${this.currentLayer}.mp3`;
+        const audioPath = this.audioPathFor(location, this.currentLayer);
 
         // Resume exactly where the visitor left off if they paused this same
         // clip, instead of restarting it from the beginning.

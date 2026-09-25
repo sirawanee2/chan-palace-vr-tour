@@ -1129,6 +1129,16 @@ a-scene {
 
 .busy-note { margin: 22px 0 0; font-size: 10px; color: #a8997c; }
 
+.pt-closed {
+    margin: 0;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #c6b48f;
+}
+
 .ev-list {
     list-style: none;
     margin: 0;
