@@ -300,6 +300,7 @@ class TourController {
 
         // Refresh the left-hand site info panel (hours, sacred days, route map)
         this.routeDest = null;
+        this.busyDay = null;
         this.renderSitePanel(location);
 
         // Auto-play the brief overview narration on arrival. This is not a
@@ -344,16 +345,68 @@ class TourController {
             if (node) this.selectRoute(node.dataset.id);
         });
 
+        // Weekday tabs on the popular-times chart
+        panel.addEventListener('click', (e) => {
+            const tab = e.target.closest('.pt-day');
+            if (!tab) return;
+            this.busyDay = Number(tab.dataset.day);
+            this.refreshBusy();
+        });
+
         // Keep the "usually busy" estimate fresh as time passes
         if (!this._busyTimer) {
             this._busyTimer = setInterval(() => this.refreshBusy(), 60000);
         }
     }
 
-    // Rough "how busy is it usually right now" estimate (never live data)
+    placeInfo(location) {
+        return (this.content.site_info && this.content.site_info.places[location.id]) || {};
+    }
+
+    // Hours shown on the popular-times chart: the opening hours, or
+    // 06–23 for a site that never closes (as Google Maps does)
+    chartHours(location) {
+        const o = this.placeInfo(location).open || { from: 8, to: 18 };
+        const from = o.to - o.from >= 24 ? 6 : o.from;
+        const to = o.to - o.from >= 24 ? 24 : o.to;
+        const hours = [];
+        for (let h = from; h < to; h++) hours.push(h);
+        return hours;
+    }
+
+    // Typical busyness 0–100 for one weekday/hour. Uses Google Maps
+    // "popular times" values copied into content.json when we have them
+    // for that weekday; otherwise falls back to a rough model.
+    popularAt(location, day, hour) {
+        const P = this.placeInfo(location);
+        const g = P.popular && P.popular[day];
+        if (g) {
+            const v = g.values[hour - g.from];
+            return { value: typeof v === 'number' ? v : 0, google: true };
+        }
+        const o = P.open || {};
+        const crowd = typeof o.crowd === 'number' ? o.crowd : 0.5;
+        const dayF = (day === 0 || day === 6) ? 1.35 : (day === 5 ? 1.1 : 1);
+        const shape = 0.2 + 0.8 * Math.max(
+            Math.exp(-(((hour - 10.5) / 2.4) ** 2)),
+            0.85 * Math.exp(-(((hour - 16) / 1.8) ** 2)));
+        const night = (hour < 6 || hour >= 20) ? 0.25 : 1;
+        return { value: Math.round(Math.min(100, crowd * dayF * shape * night * 75)), google: false };
+    }
+
+    isPeakToday(location, now) {
+        const md = (now.getMonth() + 1) * 100 + now.getDate();
+        return PEAK_WINDOWS.some(w => {
+            if (!w.ids.includes(location.id)) return false;
+            const from = w.from[0] * 100 + w.from[1];
+            const to = w.to[0] * 100 + w.to[1];
+            return from <= to ? (md >= from && md <= to) : (md >= from || md <= to);
+        });
+    }
+
+    // "How busy is it usually right now" (never live data)
     estimateBusyness(location) {
-        const P = (this.content.site_info && this.content.site_info.places[location.id]) || {};
-        const o = P.open;
+        const o = this.placeInfo(location).open;
         const now = new Date();
         const day = now.getDay();
         const hour = now.getHours() + now.getMinutes() / 60;
@@ -363,48 +416,70 @@ class TourController {
             if (!openToday || hour < o.from || hour >= o.to) return { closed: true };
         }
 
-        let score = (o && typeof o.crowd === 'number') ? o.crowd : 0.5;
-        if (day === 0 || day === 6) score += 0.35;
-        else if (day === 5) score += 0.12;
-        if ((hour >= 9 && hour < 11.5) || (hour >= 15.5 && hour < 17.5)) score += 0.25;
-        else if (hour >= 11.5 && hour < 13.5) score += 0.12;
-
-        let peak = false;
-        const md = (now.getMonth() + 1) * 100 + now.getDate();
-        for (const w of PEAK_WINDOWS) {
-            if (!w.ids.includes(location.id)) continue;
-            const from = w.from[0] * 100 + w.from[1];
-            const to = w.to[0] * 100 + w.to[1];
-            const inRange = from <= to ? (md >= from && md <= to) : (md >= from || md <= to);
-            if (inRange) { peak = true; score += 0.7; break; }
-        }
-
+        const { value } = this.popularAt(location, day, now.getHours());
         let level;
-        if (peak && score >= 1.7) level = 3;
-        else if (score >= 1.25) level = 2;
-        else if (score >= 0.8) level = 1;
+        if (this.isPeakToday(location, now)) level = 3;
+        else if (value >= 55) level = 2;
+        else if (value >= 30) level = 1;
         else level = 0;
-
-        const pct = Math.max(12, Math.min(100, Math.round((score / 2.2) * 100)));
-        return { closed: false, level, pct };
+        return { closed: false, level };
     }
 
     busyHTML(location) {
         const L = this.siteLabels();
         const b = this.estimateBusyness(location);
-        if (b.closed) {
-            return `<div class="busy"><div class="busy-row">` +
-                `<span class="busy-label">${L.busy_title || ''}</span>` +
-                `<span class="busy-pill closed">${L.busy_closed || ''}</span></div></div>`;
-        }
         const names = L.busy_levels || [];
+        const pill = b.closed
+            ? `<span class="busy-pill closed">${L.busy_closed || ''}</span>`
+            : `<span class="busy-pill lvl-${b.level}">${names[b.level] || ''}</span>`;
+
+        const now = new Date();
+        const today = now.getDay();
+        const day = (this.busyDay ?? today);
+        const dayNames = L.day_short || [];
+
+        // Real calendar dates for this week (Mon–Sun); Thai shows the
+        // Buddhist-era year (พ.ศ.), which th-TH formats by default
+        const locale = { th: 'th-TH', en: 'en-GB', zh: 'zh-CN' }[this.currentLang] || 'th-TH';
+        const dateOf = (d) => {
+            const dt = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            dt.setDate(dt.getDate() - ((today + 6) % 7) + ((d + 6) % 7));
+            return dt;
+        };
+        const fullDate = dateOf(day).toLocaleDateString(locale, {
+            weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+            ...(locale === 'th-TH' ? { era: 'short' } : {})
+        });
+
+        const tabs = [1, 2, 3, 4, 5, 6, 0].map(d =>
+            `<button type="button" class="pt-day${d === day ? ' on' : ''}${d === today ? ' today' : ''}" data-day="${d}">
+                <span>${dayNames[d] || d}</span><span class="pt-date">${dateOf(d).getDate()}</span>
+            </button>`
+        ).join('');
+
+        let google = false;
+        const bars = this.chartHours(location).map(h => {
+            const p = this.popularAt(location, day, h);
+            google = google || p.google;
+            const isNow = day === today && h === now.getHours();
+            const height = Math.max(4, p.value);
+            return `<div class="pt-col${isNow ? ' now' : ''}" title="${String(h).padStart(2, '0')}:00">
+                ${isNow ? `<span class="pt-now">${L.now || ''}</span>` : ''}
+                <span class="pt-bar" style="height:${height}%"></span>
+                <span class="pt-hour">${h % 3 === 0 ? String(h).padStart(2, '0') : ''}</span>
+            </div>`;
+        }).join('');
+
         return `<div class="busy">
             <div class="busy-row">
                 <span class="busy-label">${L.busy_title || ''}</span>
-                <span class="busy-pill lvl-${b.level}">${names[b.level] || ''}</span>
+                ${pill}
             </div>
-            <div class="busy-bar"><span class="lvl-${b.level}" style="width:${b.pct}%"></span></div>
-            <p class="busy-note muted">${L.busy_note || ''}</p>
+            <p class="pt-title">${L.popular_title || ''}</p>
+            <div class="pt-days">${tabs}</div>
+            <p class="pt-full">${fullDate}</p>
+            <div class="pt-chart">${bars}</div>
+            <p class="busy-note muted">${google ? (L.busy_note_google || '') : (L.busy_note || '')}</p>
         </div>`;
     }
 
@@ -490,27 +565,96 @@ class TourController {
             return false;
         };
 
-        const edges = SITE_MAP.edges.map(([a, b]) => {
-            const p = SITE_MAP.nodes[a], q = SITE_MAP.nodes[b];
-            const long = a === 'wat_phra_buddha_chinnarat' && b === 'chan_palace_site';
-            return `<line x1="${p.x}" y1="${p.y}" x2="${q.x}" y2="${q.y}" class="rm-edge${edgeOn(a, b) ? ' on' : ''}"${long ? ' stroke-dasharray="5 4"' : ''}/>`;
-        }).join('');
+        const L = this.siteLabels();
+        const locs = this.content[this.currentLang].locations;
+        const N = SITE_MAP.nodes;
+        const fmtDist = (m) => m >= 1000 ? (m / 1000).toFixed(1) + ' km' : m + ' m';
 
-        const nodes = Object.entries(SITE_MAP.nodes).map(([id, p]) => {
+        // Roads, plus the highlighted route and its distance chips
+        let roads = '', route = '', chips = '', bridge = '';
+        SITE_MAP.edges.forEach(([a, b, w]) => {
+            const p = N[a], q = N[b];
+            const d = `M${p.x} ${p.y} L${q.x} ${q.y}`;
+            roads += `<path d="${d}" class="rm-road"/>`;
+            if (a === 'wat_phra_buddha_chinnarat' && b === 'chan_palace_site') {
+                // Bridge deck where this road crosses the river
+                const t = (p.x - 163) / (p.x - q.x);
+                const by = p.y + (q.y - p.y) * t;
+                const ang = Math.atan2(q.y - p.y, q.x - p.x) * 180 / Math.PI;
+                bridge = `<g transform="translate(163 ${by.toFixed(1)}) rotate(${ang.toFixed(1)})">
+                    <rect x="-17" y="-5.5" width="34" height="11" rx="2.5" class="rm-bridge"/>
+                    <line x1="-15" y1="-5.5" x2="15" y2="-5.5" class="rm-rail"/>
+                    <line x1="-15" y1="5.5" x2="15" y2="5.5" class="rm-rail"/>
+                </g>`;
+            }
+            if (edgeOn(a, b)) {
+                route += `<path d="${d}" class="rm-route-glow"/><path d="${d}" class="rm-route"/>`;
+                const mx = (p.x + q.x) / 2, my = (p.y + q.y) / 2;
+                const txt = fmtDist(w);
+                const cw = txt.length * 5.6 + 10;
+                chips += `<g class="rm-chip" transform="translate(${mx.toFixed(1)} ${my.toFixed(1)})">
+                    <rect x="${-cw / 2}" y="-8" width="${cw}" height="16" rx="8"/>
+                    <text y="3.5">${txt}</text>
+                </g>`;
+            }
+        });
+
+        // Pins; the current and destination sites also get a name label
+        let names = '';
+        const nodes = Object.entries(N).map(([id, p]) => {
             const cls = ['rm-node'];
             if (id === cur) cls.push('cur');
             else if (id === dest) cls.push('dest');
             else if (inPath.has(id)) cls.push('on');
+            const pulse = id === cur
+                ? `<circle cx="${p.x}" cy="${p.y}" r="13" class="rm-pulse">
+                       <animate attributeName="r" values="13;24" dur="1.8s" repeatCount="indefinite"/>
+                       <animate attributeName="opacity" values="0.7;0" dur="1.8s" repeatCount="indefinite"/>
+                   </circle>`
+                : '';
+            if (id === cur || id === dest) {
+                const loc = locs.find(l => l.id === id);
+                if (loc) names += `<text x="${p.x}" y="${p.y + 28}" class="rm-name${id === dest ? ' dest' : ''}">${loc.short_name}</text>`;
+            }
             return `<g class="${cls.join(' ')}" data-id="${id}">
-                <circle cx="${p.x}" cy="${p.y}" r="13"/>
-                <text x="${p.x}" y="${p.y + 4}">${this.nodeNumber(id)}</text>
+                ${pulse}
+                <circle cx="${p.x}" cy="${p.y}" r="17" class="rm-hit"/>
+                <circle cx="${p.x}" cy="${p.y}" r="12.5" class="rm-dot"/>
+                <text x="${p.x}" y="${p.y + 4.2}">${this.nodeNumber(id)}</text>
             </g>`;
         }).join('');
 
         wrap.innerHTML =
-            `<svg viewBox="${SITE_MAP.viewBox}" class="route-svg">
+            `<svg viewBox="${SITE_MAP.viewBox}" class="route-svg" role="img" aria-label="${L.route || ''}">
+                <defs>
+                    <pattern id="rmDots" width="12" height="12" patternUnits="userSpaceOnUse">
+                        <circle cx="1.5" cy="1.5" r="0.8" fill="rgba(244,228,188,0.10)"/>
+                    </pattern>
+                    <linearGradient id="rmWater" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#2f6f99" stop-opacity="0.55"/>
+                        <stop offset="0.5" stop-color="#4f9fcf" stop-opacity="0.75"/>
+                        <stop offset="1" stop-color="#2f6f99" stop-opacity="0.55"/>
+                    </linearGradient>
+                    <radialGradient id="rmZone">
+                        <stop offset="0" stop-color="#d4af37" stop-opacity="0.16"/>
+                        <stop offset="1" stop-color="#d4af37" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <rect width="300" height="285" fill="url(#rmDots)"/>
+                <ellipse cx="78" cy="148" rx="72" ry="138" fill="url(#rmZone)"/>
+                <ellipse cx="238" cy="122" rx="68" ry="110" fill="url(#rmZone)"/>
+                <text x="18" y="18" class="rm-zone">${L.map_west || ''}</text>
+                <text x="282" y="18" class="rm-zone end">${L.map_east || ''}</text>
                 <path d="${SITE_MAP.river}" class="rm-river"/>
-                ${edges}${nodes}
+                <path d="M157 -5 C 172 70, 145 150, 163 210 L 179 290" class="rm-wave"/>
+                <text transform="translate(172 244) rotate(-80)" class="rm-river-label">${L.map_river || ''}</text>
+                ${roads}${bridge}${route}${nodes}${chips}${names}
+                <g class="rm-compass" transform="translate(283 262)">
+                    <circle r="11"/>
+                    <path d="M0 -8 L3.2 1 L0 -0.8 L-3.2 1 Z" class="n"/>
+                    <path d="M0 8 L3.2 -1 L0 0.8 L-3.2 -1 Z"/>
+                    <text y="-13.5">N</text>
+                </g>
             </svg>`;
     }
 

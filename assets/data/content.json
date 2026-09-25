@@ -974,6 +974,14 @@
         "busy_levels": ["ค่อนข้างว่าง", "ปานกลาง", "ค่อนข้างพลุกพล่าน", "คนเยอะมาก (วันสำคัญ/เทศกาล)"],
         "busy_closed": "ปิดทำการในขณะนี้",
         "busy_note": "ประมาณการจากวันและเวลา ไม่ใช่ข้อมูลเรียลไทม์",
+        "busy_note_google": "ที่มา: ช่วงเวลายอดนิยมจาก Google Maps (ค่าเฉลี่ยย้อนหลัง ไม่ใช่เรียลไทม์)",
+        "popular_title": "ช่วงเวลายอดนิยม",
+        "day_short": ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส"],
+        "now": "ตอนนี้",
+        "map_river": "แม่น้ำน่าน",
+        "map_east": "วัดใหญ่",
+        "map_west": "พระราชวังจันทน์",
+        "map_bridge": "สะพาน",
         "verify_note": "ข้อมูลเวลาเปิด–ปิดและวันสำคัญเป็นข้อมูลเบื้องต้น โปรดตรวจสอบกับสถานที่ก่อนเดินทาง"
       },
       "en": {
@@ -992,6 +1000,14 @@
         "busy_levels": ["Quiet", "Moderate", "Busy", "Very busy (holy day / festival)"],
         "busy_closed": "Closed right now",
         "busy_note": "Estimated from day and time — not live data",
+        "busy_note_google": "Source: Google Maps popular times (historical average, not live)",
+        "popular_title": "Popular times",
+        "day_short": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "now": "Now",
+        "map_river": "Nan River",
+        "map_east": "Wat Yai",
+        "map_west": "Chan Palace",
+        "map_bridge": "Bridge",
         "verify_note": "Hours and dates are indicative only — please confirm with the site before visiting."
       },
       "zh": {
@@ -1010,13 +1026,24 @@
         "busy_levels": ["人少", "适中", "拥挤", "非常拥挤（节日）"],
         "busy_closed": "现已闭馆",
         "busy_note": "根据星期与时间估算，非实时数据",
+        "busy_note_google": "来源：Google 地图热门时段（历史平均，非实时）",
+        "popular_title": "热门时段",
+        "day_short": ["日", "一", "二", "三", "四", "五", "六"],
+        "now": "现在",
+        "map_river": "难河",
+        "map_east": "大寺",
+        "map_west": "占王宫",
+        "map_bridge": "桥",
         "verify_note": "开放时间与日期仅供参考，出行前请与场所确认。"
       }
     },
     "places": {
       "wat_phra_buddha_chinnarat": {
-        "open": { "from": 6, "to": 21, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 1.0 },
-        "hours": { "th": "ทุกวัน 06.00–21.00 น.", "en": "Daily 06:00–21:00", "zh": "每日 06:00–21:00" },
+        "open": { "from": 6, "to": 20, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 1.0 },
+        "popular": {
+          "5": { "from": 6, "values": [21, 38, 52, 77, 93, 100, 100, 96, 93, 93, 91, 84, 68, 50] }
+        },
+        "hours": { "th": "ทุกวัน 06.00–20.00 น.", "en": "Daily 06:00–20:00", "zh": "每日 06:00–20:00" },
         "closed": { "th": "ไม่มีวันหยุด", "en": "Open every day", "zh": "全年开放" },
         "events": [
           { "name": { "th": "งานสมโภชพระพุทธชินราช", "en": "Phra Buddha Chinnarat Homage Fair", "zh": "成功佛庆典" },
@@ -1026,8 +1053,8 @@
         ]
       },
       "wat_pra_attharos": {
-        "open": { "from": 6, "to": 18, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 0.7 },
-        "hours": { "th": "ทุกวัน 06.00–18.00 น.", "en": "Daily 06:00–18:00", "zh": "每日 06:00–18:00" },
+        "open": { "from": 7, "to": 17, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 0.7 },
+        "hours": { "th": "เปิดให้เข้าชมทุกวัน 07.00–17.00 น.", "en": "Daily 07:00–17:00", "zh": "每日 07:00–17:00" },
         "closed": { "th": "ไม่มีวันหยุด", "en": "Open every day", "zh": "全年开放" },
         "events": [
           { "name": { "th": "ช่วงวันสำคัญ", "en": "Peak days", "zh": "旺季" },
@@ -1053,8 +1080,8 @@
         ]
       },
       "chan_palace_site": {
-        "open": { "from": 8, "to": 17, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 0.55 },
-        "hours": { "th": "ทุกวัน 08.00–17.00 น. (บริเวณศาลและลานพิธี)", "en": "Daily 08:00–17:00", "zh": "每日 08:00–17:00" },
+        "open": { "from": 7, "to": 17, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 0.55 },
+        "hours": { "th": "ทุกวัน 07.00–17.00 น.", "en": "Daily 07:00–17:00", "zh": "每日 07:00–17:00" },
         "closed": { "th": "ไม่มีวันหยุด (ยกเว้นช่วงเตรียมพระราชพิธี)", "en": "Open daily (except during ceremony preparations)", "zh": "全年开放（大型仪式筹备期间除外）" },
         "events": [
           { "name": { "th": "งานแผ่นดินสมเด็จพระนเรศวรมหาราช", "en": "King Naresuan the Great Fair", "zh": "纳黎萱大帝庆典" },
@@ -1064,8 +1091,8 @@
         ]
       },
       "folk_museum": {
-        "open": { "from": 6, "to": 18, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 0.75 },
-        "hours": { "th": "ทุกวัน 06.00–18.00 น. (ด้านทิศเหนือของวัดพระศรีรัตนมหาธาตุ)", "en": "Daily 06:00–18:00 (north side of Wat Phra Si Rattana Mahathat)", "zh": "每日 06:00–18:00（大舍利寺北侧）" },
+        "open": { "from": 0, "to": 24, "days": [0, 1, 2, 3, 4, 5, 6], "crowd": 0.75 },
+        "hours": { "th": "เปิดทุกวัน ตลอด 24 ชั่วโมง", "en": "Open daily, 24 hours", "zh": "每日开放，24 小时" },
         "closed": { "th": "ไม่มีวันหยุด", "en": "Open every day", "zh": "全年开放" },
         "events": [
           { "name": { "th": "วันสำคัญทางพระพุทธศาสนา", "en": "Buddhist holy days", "zh": "佛教节日" },
