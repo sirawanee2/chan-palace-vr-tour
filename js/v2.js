@@ -18,7 +18,7 @@ const T = {
         fin_title: 'พร้อมออกเดินทางแล้วหรือยัง',
         fin_text: 'ให้น้องคชา ช้างศึกน้อยแห่งพิษณุโลก พาคุณเที่ยวครบทั้งหกสถานที่ ได้ทุกที่ ทุกเวลา',
         footer: 'ระบบนำชมเสมือนจริงมรดกโบราณสถานเมืองพิษณุโลก · มหาวิทยาลัยราชภัฏพิบูลสงคราม',
-        ribbon: ['พิษณุโลก', 'สองแคว', 'พระพุทธชินราช', 'พระราชวังจันทน์', 'สมเด็จพระนเรศวรมหาราช', 'วัดใหญ่', 'แม่น้ำน่าน'],
+        ribbon: ['พระพุทธชินราชงามเลิศ', 'ถิ่นกำเนิดพระนเรศวร', 'สองฝั่งน่านล้วนเรือนแพ', 'หวานฉ่ำแท้กล้วยตาก', 'ถ้ำและน้ำตกหลากตระการตา'],
         year: (be) => `พ.ศ. ${be}`,
         timeline: [
             [1900, 'หล่อพระพุทธชินราช', 'ในรัชสมัยพระมหาธรรมราชาที่ 1 (พระยาลิไท) แห่งกรุงสุโขทัย'],
@@ -43,7 +43,7 @@ const T = {
         fin_title: 'Ready to begin?',
         fin_text: 'Let Kacha, the little war elephant of Phitsanulok, guide you through all six sites, anytime, anywhere.',
         footer: 'Phitsanulok Heritage Sites Virtual Tour · Pibulsongkram Rajabhat University',
-        ribbon: ['Phitsanulok', 'Song Khwae', 'Phra Buddha Chinnarat', 'Chan Palace', 'King Naresuan the Great', 'Wat Yai', 'Nan River'],
+        ribbon: ['The magnificent Phra Buddha Chinnarat', 'Birthplace of King Naresuan', 'Raft houses along both banks of the Nan', 'Sweet, juicy sun-dried bananas', 'Spectacular caves and waterfalls'],
         year: (be) => `${be - 543} CE`,
         timeline: [
             [1900, 'Phra Buddha Chinnarat is cast', 'In the reign of King Maha Thammaracha I (Li Thai) of Sukhothai'],
@@ -68,7 +68,7 @@ const T = {
         fin_title: '准备好出发了吗？',
         fin_text: '让彭世洛的小战象卡查，带你随时随地游遍六处景点。',
         footer: '彭世洛文化遗产虚拟导览 · 披汶颂堪皇家大学',
-        ribbon: ['彭世洛', '双河之地', '成功佛', '占王宫', '纳黎萱大帝', '大寺', '难河'],
+        ribbon: ['成功佛庄严绝美', '纳黎萱大帝诞生地', '难河两岸水上浮屋', '香甜可口香蕉干', '洞穴瀑布壮丽多姿'],
         year: (be) => `公元${be - 543}年`,
         timeline: [
             [1900, '铸造成功佛', '素可泰王朝摩诃达摩罗阇一世（立泰王）在位期间'],
