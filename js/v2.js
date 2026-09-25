@@ -213,12 +213,46 @@ class HomeV2 {
 
     bindLanguage() {
         document.querySelectorAll('.langs button').forEach(b => b.addEventListener('click', () => {
-            if (b.dataset.lang === this.lang) return;
-            this.lang = b.dataset.lang;
-            const u = new URL(location); u.searchParams.set('lang', this.lang); history.replaceState({}, '', u);
-            this.render();
-            document.body.classList.remove('ready'); void document.body.offsetWidth; document.body.classList.add('ready');
+            if (b.dataset.lang === this.lang || this._switching) return;
+            this.switchLanguage(b.dataset.lang);
         }));
+    }
+
+    // Close the temple doors, greet in the new language, re-render behind
+    // them, then open again at the top of the page — like a fresh visit.
+    switchLanguage(lang) {
+        this.lang = lang;
+        const u = new URL(location); u.searchParams.set('lang', lang); history.replaceState({}, '', u);
+        const doors = document.getElementById('doors');
+        const seal = document.getElementById('sealText');
+        if (seal) seal.textContent = { th: 'ยินดีต้อนรับ', en: 'Welcome', zh: '欢迎' }[lang];
+
+        const swap = () => {
+            this.render();
+            document.documentElement.style.scrollBehavior = 'auto';
+            scrollTo(0, 0);
+            document.documentElement.style.scrollBehavior = '';
+        };
+        if (reduceMotion) { swap(); return; }
+
+        this._switching = true;
+        document.body.classList.remove('ready');
+        document.body.classList.add('locked');
+        doors.classList.remove('gone');
+        void doors.offsetWidth;
+        doors.classList.add('closing');
+        doors.classList.remove('open');          // slide shut
+
+        setTimeout(() => {
+            swap();
+            setTimeout(() => {
+                doors.classList.remove('closing');
+                doors.classList.add('open');     // swing open again
+                document.body.classList.remove('locked');
+                setTimeout(() => document.body.classList.add('ready'), 350);
+                setTimeout(() => { doors.classList.add('gone'); this._switching = false; }, 1700);
+            }, 1100);
+        }, 800);
     }
 
     /* ---------- intro doors ---------- */
@@ -495,9 +529,9 @@ class HomeV2 {
         el.classList.add('on');
 
         const lines = {
-            th: ['ตามผมมาเลย!', 'มาเที่ยวกันเถอะ!', 'จิ้มผมเล่นได้นะ 😆', 'ตู้ดดด~ ไปกัน!', 'เที่ยวครบ 6 ที่หรือยัง?'],
-            en: ['Follow me!', "Let's explore!", 'Go on, poke me! 😆', 'Toot-toot! Come on!', 'Seen all 6 sites yet?'],
-            zh: ['跟我来！', '一起出发吧！', '戳戳我呀 😆', '嘟嘟～走吧！', '六个景点都逛了吗？']
+            th: ['ตามผมมาเลย!', 'มาเที่ยวกันเถอะ!', 'ตู้ดดด~ ไปกัน!', 'เที่ยวครบ 6 ที่หรือยัง?'],
+            en: ['Follow me!', "Let's explore!", 'Toot-toot! Come on!', 'Seen all 6 sites yet?'],
+            zh: ['跟我来！', '一起出发吧！', '嘟嘟～走吧！', '六个景点都逛了吗？']
         }[this.lang];
         const bubble = el.querySelector('.runner-bubble');
         bubble.textContent = lines[Math.floor(Math.random() * lines.length)];

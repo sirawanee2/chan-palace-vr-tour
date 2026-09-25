@@ -114,6 +114,7 @@ a { color: inherit; text-decoration: none; }
 .door-left { transform-origin: left center; }
 .door-right { transform-origin: right center; }
 
+.doors.closing .door { transition-duration: 0.75s; }
 .doors.open .door-left { transform: translateX(-102%); }
 .doors.open .door-right { transform: translateX(102%); }
 .doors.gone { display: none; }
