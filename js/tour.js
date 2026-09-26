@@ -7,6 +7,9 @@
    Nan River runs down the middle, Wat Phra Si Rattana Mahathat (nodes
    1, 2, 6) sits on the east bank, the Chan Palace group (3, 4, 5) on
    the west. Edge weights are approximate walking distances in metres. */
+// Bump when any file in audio/ is replaced (see audioPathFor)
+const AUDIO_VERSION = 5;
+
 const SITE_MAP = {
     viewBox: '0 0 300 285',
     nodes: {
@@ -798,9 +801,11 @@ class TourController {
     // Narration file for a location/layer. A location may name its own files
     // in content.json ("audio": { "overview": "...", "deep_dive": "..." },
     // relative to audio/<lang>/); otherwise the default <id>_<layer>.mp3.
+    // AUDIO_VERSION is appended so browsers fetch a replaced mp3 instead of
+    // replaying the old cached copy — bump it whenever a narration file changes.
     audioPathFor(location, layer) {
         const file = (location.audio && location.audio[layer]) || `${location.id}_${layer}.mp3`;
-        return `audio/${this.currentLang}/${file}`;
+        return `audio/${this.currentLang}/${file}?v=${AUDIO_VERSION}`;
     }
 
     formatDuration(seconds) {
