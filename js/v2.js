@@ -496,16 +496,32 @@ class HomeV2 {
                 en: ['That tickles! 😆', 'Whoa! You scared me', 'Hehe, I like you', 'Toot-toot! 🎺', "Don't tease the little elephant!", "Toot-toot! Let's go!"],
                 zh: ['好痒呀！😆', '哎呀！吓我一跳', '嘻嘻，好喜欢', '嘟嘟～ 🎺', '别逗小象啦！', '嘟嘟～走吧！']
             }[this.lang];
-            bubble.textContent = lines[Math.floor(Math.random() * lines.length)];
+            const i = Math.floor(Math.random() * lines.length);
+            bubble.textContent = lines[i];
             bubble.classList.add('show');
             el.classList.add('tapped');
             this.hearts(el.getBoundingClientRect());
-            setTimeout(() => {
+
+            // He says the line out loud: audio/kacha/<lang>/tap_<n>.mp3 holds
+            // the matching clip, in the same order as the lines above.
+            // Stay stopped for at least 1.4s, or until the clip has finished.
+            const start = Date.now();
+            let done = false;
+            const resume = () => {
+                if (done) return;
+                done = true;
                 el.classList.remove('tapped');
                 bubble.classList.remove('show');
                 this._tapped = false;
                 if (this._anim) this._anim.play();
-            }, 1400);
+            };
+            const afterVoice = () => setTimeout(resume, Math.max(0, 1400 - (Date.now() - start)));
+            if (this._voice) this._voice.pause();
+            const voice = this._voice = new Audio(`audio/kacha/${this.lang}/tap_${i + 1}.mp3`);
+            voice.addEventListener('ended', afterVoice);
+            voice.addEventListener('error', afterVoice);
+            voice.play().catch(afterVoice);
+            setTimeout(resume, 6000);   // never stay stuck if the clip stalls
         };
         el.addEventListener('click', play);
         el.addEventListener('keydown', (e) => { if (e.key === 'Enter') play(); });
