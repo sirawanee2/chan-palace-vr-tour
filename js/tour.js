@@ -851,7 +851,7 @@ class TourController {
         // clip, instead of restarting it from the beginning.
         if (this.speechKey === audioPath) {
             if (this.currentAudio && !this.currentAudio.ended) {
-                this.currentAudio.play().catch(() => this.startBrowserSpeech(location));
+                this.currentAudio.play().catch(e => this.onPlayRejected(e, this.currentAudio, location));
                 return;
             }
             if (this.synth && this.synth.paused) {
@@ -871,7 +871,7 @@ class TourController {
         this.stopSpeech();
         this.speechKey = audioPath;
 
-        this.currentAudio = new Audio(audioPath);
+        const audio = this.currentAudio = new Audio(audioPath);
 
         this.currentAudio.addEventListener('playing', () => {
             this.isSpeaking = true;
@@ -896,12 +896,29 @@ class TourController {
         // If the mp3 file doesn't exist yet (e.g. not generated for this
         // location/layer/language), fall back to the browser's built-in voice
         // so playback never silently fails.
-        this.currentAudio.addEventListener('error', () => {
+        // Only for this clip while it is still the current one — a clip that
+        // was stopped or replaced must never start the (male) browser voice.
+        audio.addEventListener('error', () => {
+            if (this.currentAudio !== audio) return;
             console.warn(`ไม่พบไฟล์เสียง ${audioPath} — ใช้เสียงเบราว์เซอร์แทนชั่วคราว`);
             this.startBrowserSpeech(location);
         });
 
-        this.currentAudio.play().catch(() => this.startBrowserSpeech(location));
+        audio.play().catch(e => this.onPlayRejected(e, audio, location));
+    }
+
+    // play() rejects when the clip is paused/replaced before it starts
+    // (AbortError) or when autoplay is blocked (NotAllowedError). Neither
+    // means the file is missing, so don't fall back to the browser voice —
+    // a genuinely missing file is handled by the 'error' listener.
+    onPlayRejected(e, audio, location) {
+        if (this.currentAudio !== audio) return;
+        if (e && (e.name === 'AbortError' || e.name === 'NotAllowedError')) {
+            this.setSpeakingUI(false);
+            return;
+        }
+        if (audio.error) return; // the 'error' listener already handled it
+        this.startBrowserSpeech(location);
     }
 
     // Browser's built-in Web Speech API. Fallback for any language when the
